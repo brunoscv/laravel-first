@@ -1,0 +1,12 @@
+table {
+    tr th,
+    tr td {
+        vertical-align: middle !important;
+    }
+
+    &.table-sm {
+        th, td {
+            padding: 5px 20px;
+        }
+    }
+}

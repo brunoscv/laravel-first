@@ -1,0 +1,64 @@
+https://medium.com/@alexrenoki/pushing-laravel-further-best-tips-good-practices-for-laravel-5-7-ac97305b8cac
+
+if ($exception instanceof \Illuminate\Auth\Access\AuthorizationException) {
+
+}
+
+when($request
+------------------------------------------------------------------------------------------------------------------------
+
+https://chrisgmyr.com/2018/08/tips-tricks-and-good-practices-with-laravels-eloquent
+
+when(request
+
+------------------------------------------------------------------------------------------------------------------------
+https://www.laravelbestpractices.com/
+
+
+------------------------------------------------------------------------------------------------------------------------
+https://www.lelocode.com/posts/laravel-api-tutorial-:-best-practices-laravel-rest-api-structure.
+https://itsolutionstuff.com/post/jquery-ajax-form-validation-with-laravel-58example.html
+https://certificacao.imasters.com.br/test/php-boas-praticas
+https://medium.com/@kamerk22/the-smart-way-to-handle-request-validation-in-laravel-5e8886279271
+------------------------------------------------------------------------------------------------------------------------
+https://laracasts.com/discuss/channels/laravel/how-to-properly-use-form-requests-policies-resource-routes-with-dependancies
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return $this->user()->can('create', Employee::class);
+    }
+
+
+    public function authorize()
+    {
+            $company = Company::find($this->company_id);
+            return $this->user()->can('update', $company);
+    }
+
+    return $user->company_id === app('request')->get('company_id');
+
+    public function authorize()
+    {
+        // Assumes company model is bound in route, i.e.
+        // Route::post('companies/{company}/employees')
+        return $this->user()->can('create', Employee::class, $this->company);
+    }
+
+------------------------------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/47200531/how-to-properly-use-form-requests-policies-resource-routes-with-dependenci
+
+public function authorize()
+{
+    return $this->user()->can('create', Employee::class, $this->request->get('company_id'));
+}
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------

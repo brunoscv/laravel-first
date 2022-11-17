@@ -1,0 +1,149 @@
+<?php
+/**
+ * @package    Controller
+ * @author     Marcelo Alves <marceloalvessoft@gmail.com>
+ * @date       {{date}} {{time}}
+ */
+
+declare(strict_types=1);
+
+namespace App\Http\Controllers\Panel;
+
+use App\Http\Controllers\Api\ApiBaseController;
+use App\Http\Requests\{{class}}StoreRequest;
+use App\Http\Requests\{{class}}UpdateRequest;
+use App\Models\{{parent_class}};
+use App\Models\{{class}};
+use App\Services\{{class}}Service;
+use App\Traits\LogActivity;
+use Exception;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
+use JsValidator;
+
+class {{class}}Controller extends ApiBaseController
+{
+    use LogActivity;
+
+    private $service;
+    private $label;
+
+    public function __construct({{class}}Service $service)
+    {
+
+        $this->service = $service;
+        $this->label = '{{class}}';
+    }
+
+    public function index({{parent_class}} ${{parent_class_var}}): View
+    {
+
+        $this->log(__METHOD__);
+
+        $this->authorize('viewAny', {{parent_class}}::class);
+
+        $data = $this->service->paginate(${{parent_class_var}}, 20);
+
+        return view('panel.{{table}}.index')
+            ->with([
+                'data' => $data,
+                'label' => $this->label,
+                '{{parent_class_var}}' => ${{parent_class_var}},
+            ]);
+    }
+
+    public function create({{parent_class}} ${{parent_class_var}}): View
+    {
+
+        $this->log(__METHOD__);
+
+        $this->authorize('update', ${{parent_class_var}});
+
+        $validatorRequest = new {{class}}StoreRequest();
+        $validator = JsValidator::make($validatorRequest->rules(), $validatorRequest->messages());
+
+        return view('panel.{{table}}.form')
+            ->with([
+                'validator' => $validator,
+                'label' => $this->label,
+                '{{parent_class_var}}' => ${{parent_class_var}}
+            ]);
+    }
+
+    public function store({{class}}StoreRequest ${{classVar}}StoreRequest, {{parent_class}} ${{parent_class_var}})
+    {
+
+        $this->service->create(${{classVar}}StoreRequest->all(), ${{parent_class_var}});
+
+        return redirect()->route('{{table}}.index', ${{parent_class_var}}->id)
+            ->with([
+                'message' => 'Criado com sucesso',
+                'messageType' => 's',
+            ]);
+    }
+
+    public function edit({{parent_class}} ${{parent_class_var}}, {{class}} ${{classVar}}): View
+    {
+
+        $this->log(__METHOD__);
+
+        $this->authorize('update', ${{parent_class_var}});
+
+        $validatorRequest = new {{class}}UpdateRequest();
+        $validator = JsValidator::make($validatorRequest->rules(), $validatorRequest->messages());
+
+        return view('panel.{{table}}.form')
+            ->with([
+                'item' => ${{classVar}},
+                'label' => $this->label,
+                'validator' => $validator,
+                '{{parent_class_var}}' => ${{parent_class_var}},
+            ]);
+    }
+
+    public function update({{class}}UpdateRequest $request, {{parent_class}} ${{parent_class_var}}, {{class}} ${{classVar}}): RedirectResponse
+    {
+
+        $this->log(__METHOD__);
+
+        $this->service->update($request->all(), ${{parent_class_var}}, ${{classVar}});
+
+        return redirect()->route('{{table}}.index', ${{parent_class_var}}->id)
+            ->with([
+                'message' => 'Atualizado com sucesso',
+                'messageType' => 's',
+            ]);
+    }
+
+    public function destroy({{parent_class}} ${{parent_class_var}}, {{class}} ${{classVar}}): JsonResponse
+    {
+
+        $this->log(__METHOD__);
+
+        try {
+
+            if (!\Auth::user()->can('update', ${{parent_class_var}})) {
+
+                return $this->sendUnauthorized();
+            }
+
+            $this->service->delete(${{classVar}});
+
+            return $this->sendResponse([]);
+
+        } catch (Exception $exception) {
+
+            return $this->sendError('Server Error.', $exception);
+        }
+    }
+
+    public function show({{class}} ${{classVar}}): JsonResponse
+    {
+
+        $this->log(__METHOD__);
+        $this->authorize('update', ${{classVar}});
+
+        return response()->json(${{classVar}}, 200, [], JSON_PRETTY_PRINT);
+    }
+}

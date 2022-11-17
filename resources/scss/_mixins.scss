@@ -1,0 +1,185 @@
+// opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// transition
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// transition
+@mixin border-radius($man) {
+  -webkit-border-radius: $man;
+  -moz-border-radius: $man;
+  border-radius: $man;
+}
+
+
+@mixin border-radius-left($man) {
+    -webkit-border-bottom-left-radius: $man;
+    -moz-border-bottom-left-radius: $man;
+    border-bottom-left-radius: $man;
+
+    -webkit-border-top-left-radius: $man;
+    -moz-border-top-left-radius: $man;
+    border-top-left-radius: $man;
+}
+
+@mixin border-radius-right($man) {
+    -webkit-border-bottom-right-radius: $man;
+    -moz-border-bottom-right-radius: $man;
+    border-bottom-right-radius: $man;
+
+    -webkit-border-top-right-radius: $man;
+    -moz-border-top-right-radius: $man;
+    border-top-right-radius: $man;
+}
+
+
+
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// justify-content
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+// align-content
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+// Cross-axis Alignment
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+
+// transform
+// Browser Prefixes
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+
+// Translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// TranslateY
+@mixin translateY($y) {
+  @include transform(translateY($y));
+}
+
+// TranslateY
+@mixin translateX($x) {
+  @include transform(translateX($x));
+}
+
+
+// Box shadows
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+
+@mixin background($imgpath,$position: center,$size: cover,$repeat: no-repeat) {
+  background: {
+    image: url($imgpath);
+    position: $position;
+    repeat: $repeat;
+    size: $size;
+  }
+}
+
+@mixin background-gradient($color: #cccccc, $to: #000000) {
+  background: {
+    color: $color;
+    image: -webkit-linear-gradient(top, $color 45%, $to 100%);
+    image: -o-linear-gradient(top, $color 45%, $to 100%);
+    image: linear-gradient(to bottom, $color 45%, $to 100%);
+    repeat: repeat-x;
+  }
+}
+
+@mixin background-linear-gradient-course($color:rgba(255, 255, 255, 0.5), $percente: 0%, $color_to: rgba(220, 66, 37, 0.5), $percente_to: 60%) {
+  background: -moz-linear-gradient(top, $color $percente, $color_to $percente_to); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($percente, $color), color-stop($percente_to, $color_to)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $color $percente, $color_to $percente_to); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $color $percente, $color_to $percente_to); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $color $percente, $color_to $percente_to); /* IE10+ */
+  background: linear-gradient(to bottom, $color $percente, $color_to $percente_to); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002f4b', endColorstr='#00000000', GradientType=0); /* IE6-9 */
+}
+
+@mixin transform_time($total_time) {
+  -webkit-transition: $total_time;
+  transition: $total_time;
+}
+
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin transition($args: all 0.6s ease 0s) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}

@@ -1,0 +1,110 @@
+<?php
+/**
+ * @package    Services
+ * @author    Marcelo Alves Pereira <marceloalvessoft@gmail.com>
+ * @date       {{date}} {{time}}
+ */
+
+declare(strict_types=1);
+
+namespace App\Services;
+
+use App\Models\{{class}};
+use App\Models\{{parent_class}};
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
+
+class {{class}}Service
+{
+
+    private $parent_id = 'parent_id';
+
+    private function buildQuery(): Builder
+    {
+
+        $query = {{class}}::query();
+
+        $query->when(request('id'), function ($query, $id) {
+
+            return $query->whereId($id);
+        });
+
+        $query->when(request('search'), function ($query, $search) {
+
+            return $query->where('id', 'LIKE', '%' . $search . '%');
+        });
+
+        return $query;
+    }
+
+    public function paginate({{parent_class}} ${{parent_class_var}}, $limit): LengthAwarePaginator
+    {
+
+        return $this->buildQuery()->where($this->parent_id, ${{parent_class_var}}->id)->paginate($limit);
+    }
+
+    public function all({{parent_class}} ${{parent_class_var}}): Collection
+    {
+
+        return $this->buildQuery()->where($this->parent_id, ${{parent_class_var}}->id)->get();
+    }
+
+    public function find($id): ?{{class}}
+    {
+
+        //return Cache::remember('{{class}}_find_' . $id, config('cache.cache_time'), function () use ($id) {
+        return {{class}}::find($id);
+        //});
+    }
+
+    public function create(array $data, {{parent_class}} ${{parent_class_var}}): {{class}}
+    {
+
+        return DB::transaction(function () use ($data, ${{parent_class_var}}) {
+
+            $model = new {{class}}();
+            $model->fill($data);
+            $model->{$this->parent_id} = ${{parent_class_var}}->id;
+            #$model->user_creator_id = \Auth::id();
+            #$model->user_updater_id = \Auth::id();
+            $model->save();
+
+            return $model;
+        });
+    }
+
+    public function update(array $data,{{parent_class}} ${{parent_class_var}},  {{class}} $model): {{class}}
+    {
+
+      return DB::transaction(function () use ($data, ${{parent_class_var}}, $model) {
+
+        $model->fill($data);
+        $model->{$this->parent_id} = ${{parent_class_var}}->id;
+        #$model->user_updater_id = \Auth::id();
+        $model->save();
+
+        return $model;
+      });
+    }
+
+    public function delete({{class}} $model): ?bool
+    {
+        #$model->user_eraser_id = \Auth::id();
+        #$model->timestamps = false;
+        #$model->save();
+
+        return $model->delete();
+    }
+
+    public function lists(): array
+    {
+        //return Cache::remember('{{class}}_lists', config('cache.cache_time'), function () {
+
+        return {{class}}::orderBy('name')
+            ->pluck('name', 'id')
+            ->toArray();
+        //});
+    }
+}

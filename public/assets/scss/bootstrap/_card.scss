@@ -1,0 +1,7 @@
+.card {
+    border-color: darken($lightengray, 2%);
+    border-radius: 0;
+    &.card-shadow {
+        box-shadow: 0 0 10px rgba($gray, 0.2);
+    }
+}

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{"4dVK":function(t,n,e){"use strict";e.r(n);var o={name:"ViewCounterProduct",props:{url:{type:String,required:!0}},methods:{viewCounter:function(){axios.post(this.url).then((function(t){})).catch((function(t){console.error(t)}))}},mounted:function(){this.viewCounter()}},r=e("KHd+"),i=Object(r.a)(o,(function(){var t=this.$createElement;return(this._self._c||t)("div")}),[],!1,null,"384a7296",null);n.default=i.exports}}]);
+//# sourceMappingURL=async-view_counter-product.js.map

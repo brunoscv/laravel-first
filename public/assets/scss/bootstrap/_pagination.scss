@@ -1,0 +1,33 @@
+.pagination {
+    .page-item {
+        .page-link {
+            align-items: center;
+            border: none;
+            border-radius: 100px;
+            color: $darkgray;
+            display: flex;
+            font-weight: 500;
+            height: 34px;
+            justify-content: center;
+            padding: 0;
+            width: 34px;
+        }
+        &:first-child,
+        &:last-child {
+            .page-link {
+                padding-left: 15px;
+                padding-right: 15px;
+                width: auto;
+            }
+        }
+        &.active {
+            .page-link {
+                background-color: $darkgray;
+                color: $white;
+            }
+        }
+        & + .page-item {
+            margin-left: 5px;
+        }
+    }
+}

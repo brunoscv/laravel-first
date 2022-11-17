@@ -1,0 +1,24 @@
+@include breakpoint(xl, min) {
+    .w-xl-100 { width: 100% !important; }
+    .w-xl-75 { width: 75% !important; }
+    .w-xl-50 { width: 50% !important; }
+    .w-xl-25 { width: 25% !important; }
+}
+@include breakpoint(lg, min) {
+    .w-lg-100 { width: 100% !important; }
+    .w-lg-75 { width: 75% !important; }
+    .w-lg-50 { width: 50% !important; }
+    .w-lg-25 { width: 25% !important; }
+}
+@include breakpoint(md, min) {
+    .w-md-100 { width: 100% !important; }
+    .w-md-75 { width: 75% !important; }
+    .w-md-50 { width: 50% !important; }
+    .w-md-25 { width: 25% !important; }
+}
+@include breakpoint(sm, min) {
+    .w-sm-100 { width: 100% !important; }
+    .w-sm-75 { width: 75% !important; }
+    .w-sm-50 { width: 50% !important; }
+    .w-sm-25 { width: 25% !important; }
+}

@@ -1,0 +1,123 @@
+.product-area {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  background: #f0f0f0;
+
+  &.doctor_page {
+    padding-bottom: 80px;
+  }
+
+  @media #{$mobile_device} {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .couse-title {
+    h3 {
+      font-size: 30px;
+      font-weight: 500;
+      color: #1F1F1F;
+      @media #{$mobile_device} {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .single_product {
+    padding: 0;
+    $size_img: 146px;
+    $size_img_mobile: 216px;
+
+    .product-thumb {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      overflow: hidden;
+
+      .figure {
+        display: block;
+        position: relative;
+
+        img {
+          @include transition(.3s);
+          @include transform(scale(1));
+          width: 100%;
+          height: $size_img;
+          @media #{$mobile_device} {
+            height: $size_img_mobile;
+          }
+
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: $size_img;
+          @media #{$mobile_device} {
+            height: $size_img_mobile;
+          }
+          display: inline-block;
+          @include background-linear-gradient-course(rgba(255, 255, 255, 0), 0%, rgba(6, 48, 94, 0.58), 100%)
+        }
+      }
+
+    }
+
+    .product-descriptions {
+      @include transition(.3s);
+      background: #F5FBFF;
+      padding-top: 16px;
+      padding-bottom: 18px;
+      padding-left: 10px;
+      height: 260px;
+      overflow: hidden;
+
+
+      .details {
+        height: 180px;
+
+        h3 {
+          font-size: 16px;
+          font-weight: 500;
+          margin-bottom: 1px;
+          @include transition(.3s);
+        }
+
+        span {
+          //color: rgba(51, 104, 156, 1);
+          width: 100%;
+          font-size: 13px;
+          @include transition(.3s);
+
+          &.price {
+            font-size: 26px;
+            color: $main-color;
+          }
+
+          &.partials {
+            margin-top: -50px;
+            color: $main-color;
+          }
+        }
+
+        .price-old {
+        }
+      }
+
+    }
+
+    .product-preview {
+      display: none;
+    }
+
+    &:hover {
+      .product-thumb {
+        img {
+          @include transform(scale(1.02));
+        }
+      }
+    }
+  }
+}

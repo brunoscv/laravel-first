@@ -1,0 +1,141 @@
+
+.cart {
+    .widget_title {
+        font-size: 20px;
+        margin-bottom: 40px;
+        // color: $title-color;
+
+        &::after {
+            content: "";
+            display: block;
+            padding-top: 15px;
+            border-bottom: 1px solid #f0e9ff;
+        }
+    }
+
+    .cart_title {
+        font-size: 22px;
+        color: $main-color-text;
+    }
+
+    .cart_item {
+        img {
+            padding: 3px;
+        }
+
+        &_body {
+            padding-left: 5px !important;
+        }
+
+        h3 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
+
+    &_content {
+        table {
+            color: #555454;
+        }
+    }
+
+    .cart_single_sidebar_widget {
+        @include background-gradient(#f6f6f6, #fff);
+        padding: 20px;
+        margin-bottom: 30px;
+
+        &.payment {
+            text-align: center;
+
+            h1 {
+                color: $main-color-text;
+            }
+
+            a {
+                transition: all 0.3s ease 0s;
+                color: #fff !important;
+                font-size: 13px;
+
+                &.danger {
+                    width: 100%;
+                    background: theme-color('danger');
+                }
+
+                &.buy {
+                    background: theme-color('success');
+                }
+
+
+                &:hover {
+                    -webkit-text-fill-color: #fff;
+                    text-decoration: none;
+                    -webkit-transition: 0.5s;
+                    transition: 0.5s;
+
+                    &.danger {
+                        background: #ff5252;
+                    }
+
+                    &.buy {
+                        background: #10bd63;
+                    }
+
+                }
+            }
+
+
+        }
+
+        .form_coupon {
+            position: relative;
+            margin-bottom: 20px;
+
+            input {
+                width: 100%;
+                height: 45px;
+                background: #fff;
+                padding-right: 130px;
+                padding-left: 18px;
+                font-size: 16px;
+                border: 1px solid #1a4068;
+                color: #000;
+                outline: none;
+                text-transform: uppercase;
+
+                &::placeholder {
+                    font-size: 16px;
+                    color: #919191;
+                }
+
+                @include border-radius(10px);
+
+            }
+
+            button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                border: none;
+                font-size: 14px;
+                color: #fff;
+                @include background-gradient(#ff5252, #bf4141);
+                @include border-radius-right(10px);
+                padding: 10px;
+                padding: 0 22px;
+                cursor: pointer;
+
+                &.hover{
+                    @include background-gradient(#ff6969, #bf4141);
+                }
+
+
+            }
+        }
+
+    }
+
+}
