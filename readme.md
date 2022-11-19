@@ -1,3 +1,2 @@
-## VIDA PERFEITA
-
-Sistema para te ajudar a ter uma vida perfeita
+# laravel-default
+Laravel default project

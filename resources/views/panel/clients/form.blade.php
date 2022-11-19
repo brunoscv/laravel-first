@@ -134,5 +134,5 @@
 
 @section('scripts')
     @include('panel._assets.scripts-form')
-    {!! $validator->selector('#frm_save') !!}
+    {!! @$validator->selector('#frm_save') !!}
 @endsection

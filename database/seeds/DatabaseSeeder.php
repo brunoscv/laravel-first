@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CityDevSeeder::class);
         $this->call(TypeSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(SurveySeeder::class);
         Artisan::call('passport:install');
     }
 }
