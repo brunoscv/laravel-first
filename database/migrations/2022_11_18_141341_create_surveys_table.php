@@ -27,7 +27,7 @@ class CreateSurveysTable extends Migration
             $table->string('email');
 
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes(); 
         });
     }
 
