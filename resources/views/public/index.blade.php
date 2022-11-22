@@ -14,7 +14,7 @@
                                 sua circulação pelo país. Esse processo garante que o automóvel esteja em situação regular aos olhos dos órgãos fiscalizadores, 
                                 fornecendo mais segurança no trânsito. </h2>
                             <h2 class="text-white mb-md-3 font-weight-medium">Faça agora a sua vistoria veicular pelo Whatsapp <span style="font-size: 3rem !important">(86) 99992-5618</span></h2>
-                            <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
+                            <a href="#schedulings" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
                             <a href="https://api.whatsapp.com/send?phone=5586999925618&text=Oi" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon" style="font-size:1.3rem"></i><?= strtoupper('Agendar por Whatsapp');?></a>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             <h2 class="text-white mb-md-3 font-weight-medium">Outro ponto importante são os débitos, como IPVA, licenciamento e multas. Tudo tem de estar em dia. Se você encontrar alguma pendência, 
                                 é bom pagar o quanto antes e regularizar a situação.</h2>
                                 <h2 class="text-white mb-md-3 font-weight-medium">Faça agora a sua vistoria veicular pelo Whatsapp <span style="font-size: 3rem !important">(86) 99992-5618</span></h2>
-                            <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
+                            <a href="#schedulings" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
                             <a href="https://api.whatsapp.com/send?phone=5586999925618&text=Oi" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon" style="font-size:1.3rem"></i><?= strtoupper('Agendar por Whatsapp');?></a>
                         </div>
                     </div>

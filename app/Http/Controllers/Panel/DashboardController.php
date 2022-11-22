@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Panel;
 use App\Http\Controllers\Api\ApiBaseController;
 use App\Models\StatusSale;
 use App\Models\Client;
+use App\Models\Survey;
 use App\Services\DashboardService;
 use App\Services\ClientService;
+use App\Services\SurveyService;
 use App\Services\FFMpegService;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -19,10 +21,11 @@ class DashboardController extends ApiBaseController
     private $service;
     private $label;
 
-    public function __construct(DashboardService $service, ClientService $cliente)
+    public function __construct(DashboardService $service, ClientService $cliente, SurveyService $survey)
     {
         $this->service = $service;
         $this->cliente = $cliente;
+        $this->survey = $survey;
         $this->label = 'Painel de Controle';
     }
 
@@ -32,11 +35,18 @@ class DashboardController extends ApiBaseController
         // $today = Carbon::now()->format('Y-m-d').'%';
         // $data = Client::where('created_at', 'like', $today)->get();
 
-        $data = $this->cliente->paginateToday(20);
+
+       // $this->log(__METHOD__);
+
+        //$this->authorize('viewAny', Survey::class);
+
+        $data = $this->survey->paginate(200);
+
         return view('panel.home.dashboard')
             ->with([
                 'data' => $data,
-            ]);
+                'label' => $this->label,
+            ]);        
     }
 
 

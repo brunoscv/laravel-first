@@ -35,7 +35,7 @@
                         <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
                         <div class="navbar-form-custom" style="width: 80%;">
                             <h2 style="margin-top: 10px" class="ml-5  animated pulse infinite">
-                                Painel de Controle  -  {{ config('app.name', 'SIPRO') }}
+                                Painel de Controle  -  {{ config('app.name', '') }}
                             </h2>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                     Versão 1.0.0
                 </div>
                 <div>
-                SCA
+               
                 </div>
             </div>
 

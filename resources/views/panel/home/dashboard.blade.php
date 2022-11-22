@@ -12,33 +12,34 @@
 
                     <div class="ibox-title">
 
-                        <h5>@yield('_titulo_pagina_') - Ultimas Simulações</h5>
+                        <h5>@yield('_titulo_pagina_') - Ultimas Vistorias Cadastradas</h5>
 
                     </div>
 
                     <div class="ibox-content">
 
                         <div class="m-b-lg">
-                            <form method="get" id="frm_search" action="{{ route('clients.index') }}">
+                            <!-- <form method="get" id="frm_search" action="{{ route('clients.index') }}">
                                 @include('panel._assets.basic-search')
-                            </form>
+                            </form> -->
                         </div>
 
                         <div class="table-responsive">
 
                             @if($data->count())
 
-                                <table class="table table-striped table-bordered table-hover">
+                                <table class="table table-striped table-bordered table-hover datatables" id="datatable">
 
                                     <thead>
                                     <tr>
-                                        <th style="width: 100px; text-align: center">Ações</th>
+                                        <!-- <th style="width: 100px; text-align: center">Ações</th> -->
                                         
                                         <th>Nome</th>
+                                        <th>Serviço</th>
                                         <th>Telefone</th>
                                         <th>E-mail</th>
-                                        <th>Dt. Nasc.</th>
-                                        <th>Renda</th>
+                                        <th>Data</th>
+                                        <th>Hora</th>
                                         <th class="hidden-xs hidden-sm" style="width: 150px;">Criado em</th>
                                     </tr>
                                     </thead>
@@ -47,7 +48,7 @@
                                     @if($data->count())
                                         @foreach($data as $item)
                                             <tr id="tr-{{ $item->id }}">
-                                                <td style="text-align: center">
+                                                <!-- <td style="text-align: center">
                                                     <div class="btn-group" role="group">
                                                         <button id="btnGroupDrop1" type="button"
                                                                 class="btn btn-default dropdown-toggle"
@@ -64,13 +65,14 @@
                                                             </link-destroy-component>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td> -->
                                                 
-                                                <td>{{ $item->nome }}</td>
-                                                <td>{{ $item->telefone }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td>{{ $item->service }}</td>
+                                                <td>{{ $item->phone }}</td>
                                                 <td>{{ $item->email }}</td>
-                                                <td>{{ date('d/m/Y', strtotime($item->nascimento)) }}</td>
-                                                <td>R$ {{ getCurrency($item->renda) }}</td>
+                                                <td>{{ date('d/m/Y', strtotime($item->date)) }}</td>
+                                                <td>{{ $item->hour }}</td>
                                                 <td class="hidden-xs hidden-sm">{{ $item->created_at->format('d/m/Y H:i') }}</td>
 
                                             </tr>
@@ -95,11 +97,11 @@
                 </div>
             </div>
             
-            <div class="col-lg-12">
+            <!-- <div class="col-lg-12">
                 <figure class="highcharts-figure">
                     <div id="container"></div>
                 </figure>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -158,7 +160,7 @@ title: {
 },
 
 subtitle: {
-    text: 'http://fazfinanciada.com.br'
+    text: 'https://dirceuvistorias.com'
 },
 
 xAxis: {
