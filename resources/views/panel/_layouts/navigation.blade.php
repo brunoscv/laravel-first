@@ -40,16 +40,6 @@
                 </li>
             @endif
 
-            <li class="{{ isActiveRoute('planos') }} item-menu">
-                <a href="{{ route('planos.index') }}"><i class="fa fa-list"></i> <span
-                        class="nav-label">Planos</span></a>
-            </li>
-            <li class="{{ isActiveRoute('clients') }} item-menu">
-                <a href="{{ route('clients.index') }}"><i class="fa fa-users"></i> <span
-                        class="nav-label">Clientes</span></a>
-            </li>
-
-
         </ul>
     </div>
 </nav>
