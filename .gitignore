@@ -10,9 +10,12 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 composer.lock
+composer.json
+composer.json2
 ### Laravel template
 /vendor/
 node_modules/
+node_modules.zip
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -20,6 +23,8 @@ app/storage/
 
 # Laravel 5 & Lumen specific
 public/storage
+public/error_log
+public/info.php
 
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
@@ -103,3 +108,6 @@ fabric.properties
 .idea/*
 package-lock.json
 app/Http/Controllers/Marcelo/databaseMapping.php
+
+.htaccess
+#public/.htaccess

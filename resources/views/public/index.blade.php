@@ -126,12 +126,7 @@
                                 <div class="col-6 form-group">
                                     <select class="custom-select px-4 mb-3  @error('city') is-invalid @enderror" style="height: 50px;" name="city" required="required">
                                         <option selected>Cidade*</option>
-                                        <option value="ALTOS" @if (old('city') == 'ALTOS') selected="selected" @endif>ALTOS</option>
-                                        <option value="CAMPO MAIOR" @if (old('city') == 'CAMPO MAIOR') selected="selected" @endif>CAMPO MAIOR</option>
-                                        <option value="JOSÉ DE FREITAS"  @if (old('city') == 'JOSÉ DE FREITAS') selected="selected" @endif>JOSÉ DE FREITAS</option>
-                                        <option value="PEDRO II" @if (old('city') == 'PEDRO II') selected="selected" @endif>PEDRO II</option>
                                         <option value="TERESINA"  @if (old('city') == 'TERESINA') selected="selected" @endif>TERESINA</option>
-                                        <option value="UNIÃO"  @if (old('city') == 'UNIÃO') selected="selected" @endif>UNIÃO</option>
                                     </select>
                                     @error('city')
                                     <span class="invalid-feedback" role="alert">
