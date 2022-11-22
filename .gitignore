@@ -103,3 +103,6 @@ fabric.properties
 .idea/*
 package-lock.json
 app/Http/Controllers/Marcelo/databaseMapping.php
+
+.htaccess
+public/.htaccess
