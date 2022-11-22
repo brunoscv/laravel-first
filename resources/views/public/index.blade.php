@@ -10,11 +10,12 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="text-white text-uppercase mb-md-3">Vistoria Veicular</h1>
-                            <h2 class="text-white mb-md-3 font-weight-medium">A vistoria veicular que se da por meio de um laudo de transferência é exigido pelo detran para fazer alteração 
-                            de proprietário do veiculo, município e alterações de características .Os dados de chassi , motor e renavam são 
-                            confrontados com a base estadual e nacional para saber se o veiculo passou por alguma adulteração. </h2>
-                            <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2"><?= strtoupper('Agendar Vistoria');?></a>
-                            <a href="https://api.whatsapp.com/send?phone=5531999999999&text=Oi" target="_blank" class="btn btn-primary py-md-3 px-md-5 mt-2"><?= strtoupper('Agendar por Whatsapp');?></a>
+                            <h2 class="text-white mb-md-3 font-weight-medium">Você sabe o que é vistoria veicular? Nada mais é do que uma avaliação realizada nos veículos a fim de liberar 
+                                sua circulação pelo país. Esse processo garante que o automóvel esteja em situação regular aos olhos dos órgãos fiscalizadores, 
+                                fornecendo mais segurança no trânsito. </h2>
+                            <h2 class="text-white mb-md-3 font-weight-medium">Faça agora a sua vistoria veicular pelo Whatsapp <span style="font-size: 3rem !important">(86) 99992-5618</span></h2>
+                            <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
+                            <a href="https://api.whatsapp.com/send?phone=5586999925618&text=Oi" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon" style="font-size:1.3rem"></i><?= strtoupper('Agendar por Whatsapp');?></a>
                         </div>
                     </div>
                 </div>
@@ -23,9 +24,11 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="text-white text-uppercase mb-md-3">Vistoria Veicular</h1>
-                            <h2 class="text-white mb-md-3 font-weight-medium">É uma forma que as autoridades de transito visualizam a diminuição de furtos , roubos e adulterações de carros.</h2>
-                            <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2"><?= strtoupper('Agendar Vistoria');?></a>
-                            <a href="https://api.whatsapp.com/send?phone=5531999999999&text=Oi" target="_blank" class="btn btn-primary py-md-3 px-md-5 mt-2"><?= strtoupper('Agendar por Whatsapp');?></a>
+                            <h2 class="text-white mb-md-3 font-weight-medium">Outro ponto importante são os débitos, como IPVA, licenciamento e multas. Tudo tem de estar em dia. Se você encontrar alguma pendência, 
+                                é bom pagar o quanto antes e regularizar a situação.</h2>
+                                <h2 class="text-white mb-md-3 font-weight-medium">Faça agora a sua vistoria veicular pelo Whatsapp <span style="font-size: 3rem !important">(86) 99992-5618</span></h2>
+                            <a href="#" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
+                            <a href="https://api.whatsapp.com/send?phone=5586999925618&text=Oi" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon" style="font-size:1.3rem"></i><?= strtoupper('Agendar por Whatsapp');?></a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +50,7 @@
 
     <!-- Services Start -->
     <div class="container-fluid">
-        <div class="container pb-3">
+        <div class="container pb-3" id="services">
             <h1 class="display-4 text-uppercase text-center mb-5">Serviços</h1>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-2">
@@ -93,7 +96,7 @@
 
     <!-- Scheduling Start -->
     <div class="container-fluid">
-        <div class="container pb-3">
+        <div class="container pb-3" id="schedulings">
             <h1 class="display-4 text-uppercase text-center mb-5">Agendar Vistoria</h1>
             <div class="row">
                 <div class="col-lg-12 mb-2">
@@ -140,7 +143,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-4 form-group">
-                                    <input type="date" name="date" class="form-control p-4  @error('date') is-invalid @enderror" value="{{ old('date') }}" placeholder="Data*" required="required">
+                                    <input type="text" name="date" class="form-control p-4  @error('date') is-invalid @enderror datepicker" value="{{ old('date') }}" placeholder="Data*" required="required">
                                     @error('date')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -151,12 +154,65 @@
                                 <div class="col-4 form-group">
                                     <select class="custom-select px-4 mb-3 @error('hour') is-invalid @enderror" style="height: 50px;" name="hour" required="required">
                                         <option selected>Hora*</option>
-                                        <option value="08:00" @if (old('hour') == '08:00') selected="selected" @endif >08:00</option>
-                                        <option value="09:00" @if (old('hour') == '09:00') selected="selected" @endif >09:00</option>
-                                        <option value="10:00" @if (old('hour') == '10:00') selected="selected" @endif >10:00</option>
-                                        <option value="11:00" @if (old('hour') == '11:00') selected="selected" @endif >11:00</option>
-                                        <option value="12:00" @if (old('hour') == '12:00') selected="selected" @endif >12:00</option>
+                                        <option value="08:10" @if (old('hour') == '08:10') selected="selected" @endif >08:00</option>
+                                        <option value="08:20" @if (old('hour') == '08:20') selected="selected" @endif >09:00</option>
+                                        <option value="08:30" @if (old('hour') == '08:30') selected="selected" @endif >10:00</option>
+                                        <option value="08:40" @if (old('hour') == '08:40') selected="selected" @endif >11:00</option>
+                                        <option value="08:50" @if (old('hour') == '08:50') selected="selected" @endif >12:00</option>
+                                        <option value="09:00" @if (old('hour') == '09:00') selected="selected" @endif >14:00</option>
+                                        <option value="09:10" @if (old('hour') == '09:10') selected="selected" @endif >08:00</option>
+                                        <option value="09:20" @if (old('hour') == '09:20') selected="selected" @endif >09:00</option>
+                                        <option value="09:30" @if (old('hour') == '09:30') selected="selected" @endif >10:00</option>
+                                        <option value="09:40" @if (old('hour') == '09:40') selected="selected" @endif >11:00</option>
+                                        <option value="09:50" @if (old('hour') == '09:50') selected="selected" @endif >12:00</option>
+                                        <option value="10:00" @if (old('hour') == '10:00') selected="selected" @endif >14:00</option>
+                                        <option value="10:10" @if (old('hour') == '10:10') selected="selected" @endif >08:00</option>
+                                        <option value="10:20" @if (old('hour') == '10:20') selected="selected" @endif >09:00</option>
+                                        <option value="10:30" @if (old('hour') == '10:30') selected="selected" @endif >10:00</option>
+                                        <option value="10:40" @if (old('hour') == '10:40') selected="selected" @endif >11:00</option>
+                                        <option value="10:50" @if (old('hour') == '10:50') selected="selected" @endif >12:00</option>
+                                        <option value="11:00" @if (old('hour') == '11:00') selected="selected" @endif >14:00</option>
+                                        <option value="11:10" @if (old('hour') == '11:10') selected="selected" @endif >08:00</option>
+                                        <option value="11:20" @if (old('hour') == '11:20') selected="selected" @endif >09:00</option>
+                                        <option value="11:30" @if (old('hour') == '11:30') selected="selected" @endif >10:00</option>
+                                        <option value="11:40" @if (old('hour') == '11:40') selected="selected" @endif >11:00</option>
+                                        <option value="11:50" @if (old('hour') == '11:50') selected="selected" @endif >12:00</option>
+                                        <option value="12:00" @if (old('hour') == '12:00') selected="selected" @endif >14:00</option>
+                                        <option value="12:10" @if (old('hour') == '12:10') selected="selected" @endif >08:00</option>
+                                        <option value="12:20" @if (old('hour') == '12:20') selected="selected" @endif >09:00</option>
+                                        <option value="12:30" @if (old('hour') == '12:30') selected="selected" @endif >10:00</option>
+                                        <option value="12:40" @if (old('hour') == '12:40') selected="selected" @endif >11:00</option>
+                                        <option value="12:50" @if (old('hour') == '12:50') selected="selected" @endif >12:00</option>
+                                        <option value="13:00" @if (old('hour') == '13:00') selected="selected" @endif >14:00</option>
+                                        <option value="13:10" @if (old('hour') == '13:10') selected="selected" @endif >08:00</option>
+                                        <option value="13:20" @if (old('hour') == '13:20') selected="selected" @endif >09:00</option>
+                                        <option value="13:30" @if (old('hour') == '13:30') selected="selected" @endif >10:00</option>
+                                        <option value="13:40" @if (old('hour') == '13:40') selected="selected" @endif >11:00</option>
+                                        <option value="13:50" @if (old('hour') == '13:50') selected="selected" @endif >12:00</option>
                                         <option value="14:00" @if (old('hour') == '14:00') selected="selected" @endif >14:00</option>
+                                        <option value="14:10" @if (old('hour') == '14:10') selected="selected" @endif >08:00</option>
+                                        <option value="14:20" @if (old('hour') == '14:20') selected="selected" @endif >09:00</option>
+                                        <option value="14:30" @if (old('hour') == '14:30') selected="selected" @endif >10:00</option>
+                                        <option value="14:40" @if (old('hour') == '14:40') selected="selected" @endif >11:00</option>
+                                        <option value="14:50" @if (old('hour') == '14:50') selected="selected" @endif >12:00</option>
+                                        <option value="15:00" @if (old('hour') == '15:00') selected="selected" @endif >14:00</option>
+                                        <option value="15:10" @if (old('hour') == '15:10') selected="selected" @endif >08:00</option>
+                                        <option value="15:20" @if (old('hour') == '15:20') selected="selected" @endif >09:00</option>
+                                        <option value="15:30" @if (old('hour') == '15:30') selected="selected" @endif >10:00</option>
+                                        <option value="15:40" @if (old('hour') == '15:40') selected="selected" @endif >11:00</option>
+                                        <option value="15:50" @if (old('hour') == '15:50') selected="selected" @endif >12:00</option>
+                                        <option value="16:00" @if (old('hour') == '16:00') selected="selected" @endif >14:00</option>
+                                        <option value="16:10" @if (old('hour') == '16:10') selected="selected" @endif >08:00</option>
+                                        <option value="16:20" @if (old('hour') == '16:20') selected="selected" @endif >09:00</option>
+                                        <option value="16:30" @if (old('hour') == '16:30') selected="selected" @endif >10:00</option>
+                                        <option value="16:40" @if (old('hour') == '16:40') selected="selected" @endif >11:00</option>
+                                        <option value="16:50" @if (old('hour') == '16:50') selected="selected" @endif >12:00</option>
+                                        <option value="17:00" @if (old('hour') == '17:00') selected="selected" @endif >14:00</option>
+                                        <option value="17:10" @if (old('hour') == '17:10') selected="selected" @endif >08:00</option>
+                                        <option value="17:20" @if (old('hour') == '17:20') selected="selected" @endif >09:00</option>
+                                        <option value="17:30" @if (old('hour') == '17:30') selected="selected" @endif >10:00</option>
+                                        <option value="17:40" @if (old('hour') == '17:40') selected="selected" @endif >11:00</option>
+                                        <option value="17:50" @if (old('hour') == '17:50') selected="selected" @endif >12:00</option>
                                     </select>
                                     @error('hour')
                                     <span class="invalid-feedback" role="alert">
@@ -269,25 +325,26 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-5">
                 <h4 class="text-uppercase text-light mb-4">Galeria</h4>
-                <div class="row mx-n1">
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" alt="Brand" src="{{asset('assets/img/gallery-1.jpg')}}"></a>
-                        
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" alt="Brand" src="{{asset('assets/img/gallery-2.jpg')}}"></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" alt="Brand" src="{{asset('assets/img/gallery-3.jpg')}}"></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" alt="Brand" src="{{asset('assets/img/gallery-4.jpg')}}"></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" alt="Brand" src="{{asset('assets/img/gallery-5.jpg')}}"></a>
-                    </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href=""><img class="w-100" alt="Brand" src="{{asset('assets/img/gallery-6.jpg')}}"></a>
+                <div id="lightgallery">
+                    <div class="row mx-n1">
+                        <div class="col-4 px-1 mb-2">
+                            <a href="{{asset('assets/img/foto1.jpeg')}}" class="image-link"><img class="w-100" alt="Brand" src="{{asset('assets/img/foto1.jpeg')}}"></a>
+                        </div>
+                        <div class="col-4 px-1 mb-2">
+                            <a href="{{asset('assets/img/foto2.jpeg')}}" class="image-link"><img class="w-100" alt="Brand" src="{{asset('assets/img/foto2.jpeg')}}"></a>
+                        </div>
+                        <div class="col-4 px-1 mb-2">
+                            <a href="{{asset('assets/img/foto3.jpeg')}}" class="image-link"><img class="w-100" alt="Brand" src="{{asset('assets/img/foto3.jpeg')}}"></a>
+                        </div>
+                        <div class="col-4 px-1 mb-2">
+                            <a href="{{asset('assets/img/foto4.jpeg')}}" class="image-link"><img class="w-100" alt="Brand" src="{{asset('assets/img/foto4.jpeg')}}"></a>
+                        </div>
+                        <div class="col-4 px-1 mb-2">
+                            <a href="{{asset('assets/img/foto5.jpeg')}}" class="image-link"><img class="w-100" alt="Brand" src="{{asset('assets/img/foto5.jpeg')}}"></a>
+                        </div>
+                        <div class="col-4 px-1 mb-2">
+                            <a href="{{asset('assets/img/foto6.jpeg')}}" class="image-link"><img class="w-100" alt="Brand" src="{{asset('assets/img/foto6.jpeg')}}"></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -301,18 +358,17 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style="display: inline; margin: 1rem;"><i class="fa fa-angle-double-up" style="font-size: 2rem;font-weight: 700;line-height: 2rem;}"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style="display: inline; margin: 0;"><i class="fa fa-angle-double-up" style="font-size: 2rem;font-weight: 700;line-height: 2rem;}"></i></a>
+    <!--<a href="https://wa.me/5586999925618?text=Oi!" class="link-whatsapp" target="_blank"><i style="margin-top:16px" class="fa fa-whatsapp"></i></a> -->
 
-
+    <!-- Whatsapp plugin -->
+    <script>window.rwbp={email:'suportetop01@hotmail.com',phone:'+5586999925618',message:'Olá, vamos agendar sua vistoria?',lang:'pt-BR'}</script><script defer async src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script>
+    
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{{ asset('/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('/js/moment.js') }}"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
@@ -323,11 +379,25 @@
     $(function () {
         //$('[data-toggle="tooltip"]').tooltip();
         //$('[data-tooltip=tooltip"]').tooltip();
+        //$('.image-link').viewbox();
+        $('.image-link').viewbox({
+            setTitle: true,
+            margin: 20,
+            resizeDuration: 300,
+            openDuration: 200,
+            closeDuration: 200,
+            closeButton: true,
+            navButtons: true,
+            closeOnSideClick: true,
+            nextOnContentClick: true
+        });
     });
 
     @if (Session::has('message'))
         showMessage('{{ session('messageType') }}', '{{ session('message') }}');
     @endif
+
+    
 </script>
 
 @endsection
