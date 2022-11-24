@@ -9,13 +9,11 @@
                     <img class="w-100" alt="Brand" src="{{asset('assets/img/car1.jpg')}}">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h1 class="text-white text-uppercase mb-md-3">Vistoria Veicular</h1>
-                            <h2 class="text-white mb-md-3 font-weight-medium">Você sabe o que é vistoria veicular? Nada mais é do que uma avaliação realizada nos veículos a fim de liberar 
-                                sua circulação pelo país. Esse processo garante que o automóvel esteja em situação regular aos olhos dos órgãos fiscalizadores, 
-                                fornecendo mais segurança no trânsito. </h2>
-                            <h2 class="text-white mb-md-3 font-weight-medium">Faça agora a sua vistoria veicular pelo Whatsapp <span style="font-size: 3rem !important">(86) 99992-5618</span></h2>
-                            <a href="#schedulings" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
-                            <a href="https://api.whatsapp.com/send?phone=5586999925618&text=Oi" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon" style="font-size:1.3rem"></i><?= strtoupper('Agendar por Whatsapp');?></a>
+                            <p class="text-white text-uppercase mb-md-3 font-weight-medium font-3">Dirceu vistorias</p>
+                            <p class="text-white mb-md-3 font-weight-medium font-1">Somos uma empresa de inspeção veicular credenciada pelo DETRAN a fins de vistoriar veículos que rodam pelo Brasil .Temos profissionais com responsabilidade e garantimos nossos serviços. </p>
+                            <p class="text-white mb-md-3 font-weight-medium font-1">Agende sua vistoria pelo nosso WhatsApp <span class="font-3"><a class="link-telefone" href="https://wa.me/5586999925618?text=Oi!"> (86) 99992-5618<a></span></p>
+                            <a href="#schedulings" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon font-06"></i><span class="font-06"><?= strtoupper('Agendar Vistoria');?></span></a>
+                            <a href="https://wa.me/5586999925618?text=Oi!" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon font-06"></i><span class="font-06"><?= strtoupper('Agendar por Whatsapp');?></span></a>
                         </div>
                     </div>
                 </div>
@@ -23,12 +21,12 @@
                     <img class="w-100" alt="Brand" src="{{asset('assets/img/car2.jpg')}}">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h1 class="text-white text-uppercase mb-md-3">Vistoria Veicular</h1>
-                            <h2 class="text-white mb-md-3 font-weight-medium">Outro ponto importante são os débitos, como IPVA, licenciamento e multas. Tudo tem de estar em dia. Se você encontrar alguma pendência, 
-                                é bom pagar o quanto antes e regularizar a situação.</h2>
-                                <h2 class="text-white mb-md-3 font-weight-medium">Faça agora a sua vistoria veicular pelo Whatsapp <span style="font-size: 3rem !important">(86) 99992-5618</span></h2>
-                            <a href="#schedulings" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon"></i><?= strtoupper('Agendar Vistoria');?></a>
-                            <a href="https://api.whatsapp.com/send?phone=5586999925618&text=Oi" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon" style="font-size:1.3rem"></i><?= strtoupper('Agendar por Whatsapp');?></a>
+                            <p class="text-white text-uppercase mb-md-3 font-weight-medium font-3">Dirceu vistorias</p>
+                            <p class="text-white mb-md-3 font-weight-medium font-1">Você sabe o que é vistoria veicular? Nada mais é do que uma avaliação realizada nos veículos a fim de liberar 
+                                sua circulação pelo país.</p>
+                            <p class="text-white mb-md-3 font-weight-medium font-1">Agende sua vistoria pelo nosso WhatsApp <span class="font-3"><a class="link-telefone" href="https://wa.me/5586999925618?text=Oi!" >(86) 99992-5618</a></span></p>
+                            <a href="#schedulings" class="btn btn-primary py-md-3 px-md-5 mt-2"><i class="fa fa-calendar btn-icon font-06"></i><span class="font-06"><?= strtoupper('Agendar Vistoria');?></span></a>
+                            <a href="https://wa.me/5586999925618?text=Oi!" target="_blank" class="btn btn-whatsapp py-md-3 px-md-5 mt-2"><i class="fa fa-whatsapp btn-icon font-06"></i><span class="font-06"><?= strtoupper('Agendar por Whatsapp');?></span></a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +109,7 @@
                         <form method="POST" action="{{ route('front.surveyCreate') }}" id="frm_save">
                             @csrf
                             <div class="row">
-                                <div class="col-6 form-group">
+                                <div class="col-lg-6 col-sm-12 col-xs-12 form-group">
                                     <select class="custom-select px-4 mb-3  @error('service') is-invalid @enderror" style="height: 50px;" name="service" required="required">
                                         <option selected>Serviço*</option>
                                         <option value="VISTORIA VEICULAR - R$ 131,40" @if (old('service') == 'VISTORIA VEICULAR - R$ 131,40') selected="selected" @endif >VISTORIA VEICULAR - R$ 131,40</option>
@@ -123,7 +121,7 @@
                                     @enderror
                                    
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-lg-6 col-sm-12 col-xs-12 form-group">
                                     <select class="custom-select px-4 mb-3  @error('city') is-invalid @enderror" style="height: 50px;" name="city" required="required">
                                         <option selected>Cidade*</option>
                                         <option value="TERESINA"  @if (old('city') == 'TERESINA') selected="selected" @endif>TERESINA</option>
@@ -137,7 +135,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-4 form-group">
+                                <div class="col-lg-4 col-sm-12 col-xs-12 form-group">
                                     <input type="text" name="date" class="form-control p-4  @error('date') is-invalid @enderror datepicker" value="{{ old('date') }}" placeholder="Data*" required="required">
                                     @error('date')
                                     <span class="invalid-feedback" role="alert">
@@ -146,7 +144,7 @@
                                     @enderror
                                    
                                 </div>
-                                <div class="col-4 form-group">
+                                <div class="col-lg-4  col-sm-12 col-xs-12 form-group">
                                     <select class="custom-select px-4 mb-3 @error('hour') is-invalid @enderror" style="height: 50px;" name="hour" required="required">
                                         <option selected>Hora*</option>
                                         <option value="08:00" @if (old('hour') == '08:00') selected="selected" @endif >08:00</option>
@@ -217,7 +215,7 @@
                                     @enderror
                                    
                                 </div>
-                                <div class="col-4 form-group">
+                                <div class="col-lg-4 col-sm-12 col-xs-12 form-group">
                                     <select class="custom-select px-4 mb-3  @error('payment') is-invalid @enderror" style="height: 50px;" name="payment" required="required">
                                         <option selected>Pagamento*</option>
                                         <option value="PAGAMENTO BALC&Atilde;O" @if (old('payment') == 'PAGAMENTO BALCÃO') selected="selected" @endif >PAGAMENTO BALC&Atilde;O</option>
@@ -231,7 +229,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6 form-group">
+                                <div class="col-lg-6 col-sm-12 col-xs-12 form-group">
                                     <input type="text" name="name" class="form-control p-4  @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nome*">
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -240,7 +238,7 @@
                                     @enderror
                                    
                                 </div>
-                                <div class="col-3 form-group">
+                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
                                     <input type="text" name="cpf" class="form-control mask_cpf p-4 @error('cpf') is-invalid @enderror" value="{{ old('cpf') }}" placeholder="CPF">
                                     @error('cpf')
                                     <span class="invalid-feedback" role="alert">
@@ -249,7 +247,7 @@
                                     @enderror
                                    
                                 </div>
-                                <div class="col-3 form-group">
+                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
                                     <input type="text" name="cnpj" class="form-control mask_cnpj p-4  @error('cnpj') is-invalid @enderror" value="{{ old('cnpj') }}" placeholder="CNPJ">
                                     @error('cnpj')
                                     <span class="invalid-feedback" role="alert">
@@ -260,7 +258,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-3 form-group">
+                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
                                     <input type="text" name="phone" class="form-control mask_phone_with_ddd p-4  @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Telefone*" required="required">
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -269,7 +267,7 @@
                                     @enderror
                                    
                                 </div>
-                                <div class="col-9 form-group">
+                                <div class="col-lg-9 col-sm-12 col-xs-12 form-group">
                                     <input type="email" name="email" class="form-control p-4  @error('email') is-invalid @enderror" placeholder="Email*" value="{{ old('email') }}" required="required">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -354,11 +352,11 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style="display: inline; margin: 0;"><i class="fa fa-angle-double-up" style="font-size: 2rem;font-weight: 700;line-height: 2rem;}"></i></a>
-    <!--<a href="https://wa.me/5586999925618?text=Oi!" class="link-whatsapp" target="_blank"><i style="margin-top:16px" class="fa fa-whatsapp"></i></a> -->
+    <!--<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style="display: inline; margin: 0;"><i class="fa fa-angle-double-up" style="font-size: 2rem;font-weight: 700;line-height: 2rem;}"></i></a> -->
+    <a href="https://wa.me/5586999925618?text=Oi!" class="link-whatsapp" target="_blank"><i style="margin-top:16px" class="fa fa-whatsapp"></i></a>
 
     <!-- Whatsapp plugin -->
-    <script>window.rwbp={email:'suportetop01@hotmail.com',phone:'+5586999925618',message:'Olá, vamos agendar sua vistoria?',lang:'pt-BR'}</script><script defer async src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script>
+    <!--<script>window.rwbp={email:'suportetop01@hotmail.com',phone:'+5586999925618',message:'Olá, vamos agendar sua vistoria?',lang:'pt-BR'}</script><script defer async src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script> -->
     
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
