@@ -124,7 +124,7 @@
                                     @enderror
                                    
                                 </div> -->
-                                <div class="col-5 form-group">
+                                <div class="col-5 col-lg-5 col-sm-12 col-xs-12 form-group">
                                     <input type="text" name="name" class="form-control p-4  @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nome*" required="required">
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -134,7 +134,7 @@
                                    
                                 </div>
 
-                                <div class="col-4 form-group">
+                                <div class="col-4 col-lg-4 col-sm-12 col-xs-12 form-group">
                                     <!-- <select class="custom-select px-4 mb-3  @error('city') is-invalid @enderror" style="height: 50px;" name="city" required="required">
                                         <option selected>Cidade*</option>
                                         <option value="TERESINA"  @if (old('city') == 'TERESINA') selected="selected" @endif>TERESINA</option>
@@ -148,7 +148,7 @@
                                    
                                 </div>
                                 
-                                <div class="col-3 form-group">
+                                <div class="col-3 col-lg-3 col-sm-12 col-xs-12 form-group">
                                     <input type="text" name="license" class="form-control p-4  @error('license') is-invalid @enderror" value="{{ old('license') }}" placeholder="Placa do Veículo*">
                                     @error('license')
                                     <span class="invalid-feedback" role="alert">
