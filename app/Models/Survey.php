@@ -22,7 +22,7 @@ class Survey extends Model
      *
      * @var bool
      */
-    public $timestamps = true;
+    public $timestamps = false;
 
     /**
      * The table associated with the model.
@@ -37,16 +37,9 @@ class Survey extends Model
      * @var array
      */
     protected $fillable = [
-        'service',
-            'city',
-            'date',
-            'hour',
-            'payment',
-            'name',
-            'cpf',
-            'cnpj',
-            'phone',
-            'email',
+        'name',
+        'city',
+        'license',
     ];
 
     /**

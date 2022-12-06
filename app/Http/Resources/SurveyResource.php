@@ -22,16 +22,9 @@ class SurveyResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'service' => $this->service,
-            'city' => $this->city,
-            'date' => $this->date,
-            'hour' => $this->hour,
-            'payment' => $this->payment,
             'name' => $this->name,
-            'cpf' => $this->cpf,
-            'cnpj' => $this->cnpj,
-            'phone' => $this->phone,
-            'email' => $this->email,
+            'city' => $this->city,
+            'license' => $this->license,
         ];
     }
 }

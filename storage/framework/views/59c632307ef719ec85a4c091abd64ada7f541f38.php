@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/theme.css')); ?>"/>
     <link rel="stylesheet" href="<?php echo e(asset('css/select2.css')); ?>"/>
     <link rel="stylesheet" href="<?php echo e(asset('css/datepicker.css')); ?>"/>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo e(asset('css/viewbox.css')); ?>"/>
+    
     <style>
         
         /********** Template CSS **********/
@@ -122,6 +124,16 @@
             width: 100%;
         }
 
+        .btn-icon {
+            margin: 0 0.5rem;
+        }
+
+        .btn-whatsapp {
+            color: #fff;
+            background-color: #54ce60;
+            border-color: ##54ce60;
+        }
+
         .btn-primary {
             color: #212121;
             background-color: #e9e094;
@@ -151,9 +163,24 @@
         .back-to-top {
             position: fixed;
             display: none;
-            right: 30px;
-            bottom: 30px;
+            right: 0;
+            bottom: 15rem;
             z-index: 99;
+        }
+
+        .link-whatsapp {
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom:40px;
+            right:40px;
+            background-color:#25d366;
+            color:#FFF;
+            border-radius:50px;
+            text-align:center;
+            font-size:30px;
+            box-shadow: 1px 1px 2px #888; 
+            z-index:1000;
         }
 
         .nav-bar::before {
@@ -497,9 +524,9 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="service.html" class="nav-item nav-link">Serviços</a>
-                        <a href="about.html" class="nav-item nav-link">Agendar</a>
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="#services" class="nav-item nav-link">Serviços</a>
+                        <a href="#schedulings" class="nav-item nav-link">Agendar</a>
                         <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
                     </div>
                 </div>
@@ -525,6 +552,9 @@
 <script src="<?php echo e(asset('/js/inspinia.js')); ?>"></script>
 <script src="<?php echo e(asset('/js/plugins/pace/pace.min.js')); ?>"></script>
 <script src="<?php echo e(asset('/vendor/jquery.maskMoney.min.js')); ?>"></script>
+<script src="<?php echo e(asset('/js/custom-datepicker.js')); ?>"></script>
+
+<script src="<?php echo e(asset('/js/jquery.viewbox.js')); ?>"></script>
 
 
 

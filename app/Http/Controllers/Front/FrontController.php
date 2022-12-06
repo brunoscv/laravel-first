@@ -58,11 +58,13 @@ class FrontController extends ApiBaseController
             $storeRequest = new SurveyStoreRequest();
             $validator = Validator::make(request()->all(), $storeRequest->rules());
 
-            //dd(request()->all());
+            
 
             if($validator->fails()){
                 return back()->withErrors($validator->errors())->withInput();
             }
+
+            //dd(request()->all());
 
             $item = $this->service->create(request()->all());
 
@@ -74,8 +76,8 @@ class FrontController extends ApiBaseController
 
         } catch (\Exception $e) {
 
-            //return $this->sendError('Server Error.', $e);
-            return back()->withErrors($e);
+            return $this->sendError('Server Error.', $e);
+            //return back()->withErrors($e);
 
         }
     }

@@ -15,17 +15,10 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('service');
-            $table->string('city');
-            $table->date('date');
-            $table->time('hour');
-            $table->string('payment');
             $table->string('name');
-            $table->string('cpf')->nullable();
-            $table->string('cnpj')->nullable();
-            $table->string('phone');
-            $table->string('email');
-
+            $table->string('city');
+            $table->string('license');
+           
             $table->timestamps();
             $table->softDeletes(); 
         });

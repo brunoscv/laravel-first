@@ -61,12 +61,14 @@ class SurveyService
         return DB::transaction(function () use ($data) {
 
             $model = new Survey();
-            $model->fill($data);
+            $b = $model->fill($data);
 
-            //dd($model);
+            //dd($b);
             #$model->user_creator_id = \Auth::id();
             #$model->user_updater_id = \Auth::id();
-            $model->save();
+            $a = $model->save();
+
+            
 
             return $model;
         });

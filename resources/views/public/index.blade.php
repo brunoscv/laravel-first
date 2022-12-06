@@ -109,7 +109,7 @@
                         <form method="POST" action="{{ route('front.surveyCreate') }}" id="frm_save">
                             @csrf
                             <div class="row">
-                                <div class="col-lg-6 col-sm-12 col-xs-12 form-group">
+                                <!-- <div class="col-6 form-group">
                                     <select class="custom-select px-4 mb-3  @error('service') is-invalid @enderror" style="height: 50px;" name="service" required="required">
                                         <option selected>Serviço*</option>
                                         <option value="VISTORIA VEICULAR - R$ 131,40" @if (old('service') == 'VISTORIA VEICULAR - R$ 131,40') selected="selected" @endif >VISTORIA VEICULAR - R$ 131,40</option>
@@ -120,13 +120,34 @@
                                     </span>
                                     @enderror
                                    
+                                </div> -->
+                                <div class="col-5 form-group">
+                                    <input type="text" name="name" class="form-control p-4  @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nome*" required="required">
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
                                 </div>
-                                <div class="col-lg-6 col-sm-12 col-xs-12 form-group">
-                                    <select class="custom-select px-4 mb-3  @error('city') is-invalid @enderror" style="height: 50px;" name="city" required="required">
+
+                                <div class="col-4 form-group">
+                                    <!-- <select class="custom-select px-4 mb-3  @error('city') is-invalid @enderror" style="height: 50px;" name="city" required="required">
                                         <option selected>Cidade*</option>
                                         <option value="TERESINA"  @if (old('city') == 'TERESINA') selected="selected" @endif>TERESINA</option>
-                                    </select>
+                                    </select> -->
+                                    <input type="text" name="city" class="form-control p-4  @error('city') is-invalid @enderror citypicker" value="{{ old('city') }}" placeholder="Cidade*" required="required">
                                     @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
+                                
+                                <div class="col-3 form-group">
+                                    <input type="text" name="license" class="form-control p-4  @error('license') is-invalid @enderror" value="{{ old('license') }}" placeholder="Placa do Veículo*">
+                                    @error('license')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -135,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-sm-12 col-xs-12 form-group">
+                                <!-- <div class="col-4 form-group">
                                     <input type="text" name="date" class="form-control p-4  @error('date') is-invalid @enderror datepicker" value="{{ old('date') }}" placeholder="Data*" required="required">
                                     @error('date')
                                     <span class="invalid-feedback" role="alert">
@@ -143,8 +164,8 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
-                                <div class="col-lg-4  col-sm-12 col-xs-12 form-group">
+                                </div> -->
+                                <!-- <div class="col-4 form-group">
                                     <select class="custom-select px-4 mb-3 @error('hour') is-invalid @enderror" style="height: 50px;" name="hour" required="required">
                                         <option selected>Hora*</option>
                                         <option value="08:00" @if (old('hour') == '08:00') selected="selected" @endif >08:00</option>
@@ -214,8 +235,8 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
-                                <div class="col-lg-4 col-sm-12 col-xs-12 form-group">
+                                </div> -->
+                                <!-- <div class="col-4 form-group">
                                     <select class="custom-select px-4 mb-3  @error('payment') is-invalid @enderror" style="height: 50px;" name="payment" required="required">
                                         <option selected>Pagamento*</option>
                                         <option value="PAGAMENTO BALC&Atilde;O" @if (old('payment') == 'PAGAMENTO BALCÃO') selected="selected" @endif >PAGAMENTO BALC&Atilde;O</option>
@@ -226,10 +247,10 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row">
-                                <div class="col-lg-6 col-sm-12 col-xs-12 form-group">
+                                <!-- <div class="col-6 form-group">
                                     <input type="text" name="name" class="form-control p-4  @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nome*">
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -237,8 +258,8 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
-                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
+                                </div> -->
+                                <!-- <div class="col-3 form-group">
                                     <input type="text" name="cpf" class="form-control mask_cpf p-4 @error('cpf') is-invalid @enderror" value="{{ old('cpf') }}" placeholder="CPF">
                                     @error('cpf')
                                     <span class="invalid-feedback" role="alert">
@@ -246,8 +267,8 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
-                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
+                                </div> -->
+                                <!-- <div class="col-3 form-group">
                                     <input type="text" name="cnpj" class="form-control mask_cnpj p-4  @error('cnpj') is-invalid @enderror" value="{{ old('cnpj') }}" placeholder="CNPJ">
                                     @error('cnpj')
                                     <span class="invalid-feedback" role="alert">
@@ -255,10 +276,10 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row">
-                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
+                                <!-- <div class="col-3 form-group">
                                     <input type="text" name="phone" class="form-control mask_phone_with_ddd p-4  @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Telefone*" required="required">
                                     @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -266,8 +287,8 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
-                                <div class="col-lg-9 col-sm-12 col-xs-12 form-group">
+                                </div> -->
+                                <!-- <div class="col-9 form-group">
                                     <input type="email" name="email" class="form-control p-4  @error('email') is-invalid @enderror" placeholder="Email*" value="{{ old('email') }}" required="required">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -275,7 +296,7 @@
                                     </span>
                                     @enderror
                                    
-                                </div>
+                                </div> -->
                             </div>
                             <div>
                                 <button class="btn btn-primary py-3 px-5" type="submit"><?= strtoupper('Agendar');?></button>
