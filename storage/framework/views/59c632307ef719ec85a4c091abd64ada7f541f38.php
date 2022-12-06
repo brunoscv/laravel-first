@@ -484,6 +484,46 @@
         .link a{
             color: #ca181f !important;
         }
+
+        .font-1 {
+            font-size: 1.5rem;
+        }
+
+        .font-3 {
+            font-size: 3rem;
+        }
+
+        .link-telefone {
+            color: #fff !important;
+            text-decoration: underline;
+        }
+
+        /* Extra small devices (phones, 600px and down) */
+        @media  only screen and (max-width: 600px) {
+            
+            .font-06 {
+                font-size: 0.6rem;
+            }
+            .font-1 {
+                font-size: 0.8rem;
+            }
+
+            .font-3 {
+                font-size: 1rem;
+            }
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media  only screen and (min-width: 600px) {}
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media  only screen and (min-width: 768px) {}
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media  only screen and (min-width: 992px) {}
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media  only screen and (min-width: 1200px) {}
     </style>
 
     <?php echo $__env->yieldContent('styles'); ?>

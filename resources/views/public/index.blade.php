@@ -105,6 +105,9 @@
                     @endif
                 </div>
                 <div class="col-lg-12 mb-2">
+                <p style="color:red !important"> O documento que será apresentado para a vistoria não precisa sermnecessariamente o documento vigente do proprietário do veículo.</p>
+                </div>
+                <div class="col-lg-12 mb-2">
                     <div class="contact-form bg-light mb-4" style="padding: 30px;">
                         <form method="POST" action="{{ route('front.surveyCreate') }}" id="frm_save">
                             @csrf
