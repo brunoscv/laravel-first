@@ -76,8 +76,9 @@ class FrontController extends ApiBaseController
 
         } catch (\Exception $e) {
 
-            return $this->sendError('Server Error.', $e);
+            //return $this->sendError('Server Error.', $e);
             //return back()->withErrors($e);
+            session()->flash('error', 'Não foi possivel realizar o agendamento! Confira seus dados e tente novamente');
 
         }
     }
