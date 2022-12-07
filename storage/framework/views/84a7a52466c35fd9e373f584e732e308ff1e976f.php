@@ -104,40 +104,15 @@
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-12 mb-2">
-                <p style="color:red !important"> O documento que será apresentado para a vistoria não precisa necessariamente o documento vigente do proprietário do ve[iculo.</p>
+                <p style="color:red !important"> O documento que será apresentado para a vistoria não precisa ser necessariamente o documento vigente do proprietário do veículo.</p>
                 </div>
                 <div class="col-lg-12 mb-2">
                     <div class="contact-form bg-light mb-4" style="padding: 30px;">
                         <form method="POST" action="<?php echo e(route('front.surveyCreate')); ?>" id="frm_save">
                             <?php echo csrf_field(); ?>
                             <div class="row">
-                                <!-- <div class="col-6 form-group">
-                                    <select class="custom-select px-4 mb-3  <?php $__errorArgs = ['service'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" style="height: 50px;" name="service" required="required">
-                                        <option selected>Serviço*</option>
-                                        <option value="VISTORIA VEICULAR - R$ 131,40" <?php if(old('service') == 'VISTORIA VEICULAR - R$ 131,40'): ?> selected="selected" <?php endif; ?> >VISTORIA VEICULAR - R$ 131,40</option>
-                                    </select>
-                                    <?php $__errorArgs = ['service'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                                <div class="col-5 form-group">
+                                
+                                <div class="col-lg-5 col-sm-12 col-xs-12 col-md-5 form-group">
                                     <input type="text" name="name" class="form-control p-4  <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -161,18 +136,7 @@ unset($__errorArgs, $__bag); ?>
                                    
                                 </div>
 
-                                <div class="col-4 form-group">
-                                    <!-- <select class="custom-select px-4 mb-3  <?php $__errorArgs = ['city'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" style="height: 50px;" name="city" required="required">
-                                        <option selected>Cidade*</option>
-                                        <option value="TERESINA"  <?php if(old('city') == 'TERESINA'): ?> selected="selected" <?php endif; ?>>TERESINA</option>
-                                    </select> -->
+                                <div class="col-lg-4 col-sm-12 col-xs-12 col-md-5 form-group">
                                     <input type="text" name="city" class="form-control p-4  <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -193,10 +157,9 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                   
                                 </div>
-                                
-                                <div class="col-3 form-group">
+
+                                <div class="col-lg-3 col-sm-12 col-xs-12 col-md-5 form-group">
                                     <input type="text" name="license" class="form-control p-4  <?php $__errorArgs = ['license'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -217,264 +180,10 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                   
                                 </div>
+                                
                             </div>
-                            <div class="row">
-                                <!-- <div class="col-4 form-group">
-                                    <input type="text" name="date" class="form-control p-4  <?php $__errorArgs = ['date'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?> datepicker" value="<?php echo e(old('date')); ?>" placeholder="Data*" required="required">
-                                    <?php $__errorArgs = ['date'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                                <!-- <div class="col-4 form-group">
-                                    <select class="custom-select px-4 mb-3 <?php $__errorArgs = ['hour'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" style="height: 50px;" name="hour" required="required">
-                                        <option selected>Hora*</option>
-                                        <option value="08:00" <?php if(old('hour') == '08:00'): ?> selected="selected" <?php endif; ?> >08:00</option>
-                                        <option value="08:10" <?php if(old('hour') == '08:10'): ?> selected="selected" <?php endif; ?> >08:10</option>
-                                        <option value="08:20" <?php if(old('hour') == '08:20'): ?> selected="selected" <?php endif; ?> >08:20</option>
-                                        <option value="08:30" <?php if(old('hour') == '08:30'): ?> selected="selected" <?php endif; ?> >08:30</option>
-                                        <option value="08:40" <?php if(old('hour') == '08:40'): ?> selected="selected" <?php endif; ?> >08:40</option>
-                                        <option value="08:50" <?php if(old('hour') == '08:50'): ?> selected="selected" <?php endif; ?> >08:50</option>
-                                        <option value="09:00" <?php if(old('hour') == '09:00'): ?> selected="selected" <?php endif; ?> >09:00</option>
-                                        <option value="09:10" <?php if(old('hour') == '09:10'): ?> selected="selected" <?php endif; ?> >09:10</option>
-                                        <option value="09:20" <?php if(old('hour') == '09:20'): ?> selected="selected" <?php endif; ?> >09:20</option>
-                                        <option value="09:30" <?php if(old('hour') == '09:30'): ?> selected="selected" <?php endif; ?> >09:30</option>
-                                        <option value="09:40" <?php if(old('hour') == '09:40'): ?> selected="selected" <?php endif; ?> >09:40</option>
-                                        <option value="09:50" <?php if(old('hour') == '09:50'): ?> selected="selected" <?php endif; ?> >09:50</option>
-                                        <option value="10:00" <?php if(old('hour') == '10:00'): ?> selected="selected" <?php endif; ?> >10:00</option>
-                                        <option value="10:10" <?php if(old('hour') == '10:10'): ?> selected="selected" <?php endif; ?> >10:10</option>
-                                        <option value="10:20" <?php if(old('hour') == '10:20'): ?> selected="selected" <?php endif; ?> >10:20</option>
-                                        <option value="10:30" <?php if(old('hour') == '10:30'): ?> selected="selected" <?php endif; ?> >10:30</option>
-                                        <option value="10:40" <?php if(old('hour') == '10:40'): ?> selected="selected" <?php endif; ?> >10:40</option>
-                                        <option value="10:50" <?php if(old('hour') == '10:50'): ?> selected="selected" <?php endif; ?> >10:50</option>
-                                        <option value="11:00" <?php if(old('hour') == '11:00'): ?> selected="selected" <?php endif; ?> >11:00</option>
-                                        <option value="11:10" <?php if(old('hour') == '11:10'): ?> selected="selected" <?php endif; ?> >11:10</option>
-                                        <option value="11:20" <?php if(old('hour') == '11:20'): ?> selected="selected" <?php endif; ?> >11:20</option>
-                                        <option value="11:30" <?php if(old('hour') == '11:30'): ?> selected="selected" <?php endif; ?> >11:30</option>
-                                        <option value="11:40" <?php if(old('hour') == '11:40'): ?> selected="selected" <?php endif; ?> >11:40</option>
-                                        <option value="11:50" <?php if(old('hour') == '11:50'): ?> selected="selected" <?php endif; ?> >11:50</option>
-                                        <option value="12:00" <?php if(old('hour') == '12:00'): ?> selected="selected" <?php endif; ?> >12:00</option>
-                                        <option value="12:10" <?php if(old('hour') == '12:10'): ?> selected="selected" <?php endif; ?> >12:10</option>
-                                        <option value="12:20" <?php if(old('hour') == '12:20'): ?> selected="selected" <?php endif; ?> >12:20</option>
-                                        <option value="12:30" <?php if(old('hour') == '12:30'): ?> selected="selected" <?php endif; ?> >12:30</option>
-                                        <option value="12:40" <?php if(old('hour') == '12:40'): ?> selected="selected" <?php endif; ?> >12:40</option>
-                                        <option value="12:50" <?php if(old('hour') == '12:50'): ?> selected="selected" <?php endif; ?> >12:50</option>
-                                        <option value="13:00" <?php if(old('hour') == '13:00'): ?> selected="selected" <?php endif; ?> >13:00</option>
-                                        <option value="13:10" <?php if(old('hour') == '13:10'): ?> selected="selected" <?php endif; ?> >13:10</option>
-                                        <option value="13:20" <?php if(old('hour') == '13:20'): ?> selected="selected" <?php endif; ?> >13:20</option>
-                                        <option value="13:30" <?php if(old('hour') == '13:30'): ?> selected="selected" <?php endif; ?> >13:30</option>
-                                        <option value="13:40" <?php if(old('hour') == '13:40'): ?> selected="selected" <?php endif; ?> >13:40</option>
-                                        <option value="13:50" <?php if(old('hour') == '13:50'): ?> selected="selected" <?php endif; ?> >13:50</option>
-                                        <option value="14:00" <?php if(old('hour') == '14:00'): ?> selected="selected" <?php endif; ?> >14:00</option>
-                                        <option value="14:10" <?php if(old('hour') == '14:10'): ?> selected="selected" <?php endif; ?> >14:10</option>
-                                        <option value="14:20" <?php if(old('hour') == '14:20'): ?> selected="selected" <?php endif; ?> >14:20</option>
-                                        <option value="14:30" <?php if(old('hour') == '14:30'): ?> selected="selected" <?php endif; ?> >14:30</option>
-                                        <option value="14:40" <?php if(old('hour') == '14:40'): ?> selected="selected" <?php endif; ?> >14:40</option>
-                                        <option value="14:50" <?php if(old('hour') == '14:50'): ?> selected="selected" <?php endif; ?> >14:50</option>
-                                        <option value="15:00" <?php if(old('hour') == '15:00'): ?> selected="selected" <?php endif; ?> >15:00</option>
-                                        <option value="15:10" <?php if(old('hour') == '15:10'): ?> selected="selected" <?php endif; ?> >15:10</option>
-                                        <option value="15:20" <?php if(old('hour') == '15:20'): ?> selected="selected" <?php endif; ?> >15:20</option>
-                                        <option value="15:30" <?php if(old('hour') == '15:30'): ?> selected="selected" <?php endif; ?> >15:30</option>
-                                        <option value="15:40" <?php if(old('hour') == '15:40'): ?> selected="selected" <?php endif; ?> >15:40</option>
-                                        <option value="15:50" <?php if(old('hour') == '15:50'): ?> selected="selected" <?php endif; ?> >15:50</option>
-                                        <option value="16:00" <?php if(old('hour') == '16:00'): ?> selected="selected" <?php endif; ?> >16:00</option>
-                                        <option value="16:10" <?php if(old('hour') == '16:10'): ?> selected="selected" <?php endif; ?> >16:10</option>
-                                        <option value="16:20" <?php if(old('hour') == '16:20'): ?> selected="selected" <?php endif; ?> >16:20</option>
-                                        <option value="16:30" <?php if(old('hour') == '16:30'): ?> selected="selected" <?php endif; ?> >16:30</option>
-                                        <option value="16:40" <?php if(old('hour') == '16:40'): ?> selected="selected" <?php endif; ?> >16:40</option>
-                                        <option value="16:50" <?php if(old('hour') == '16:50'): ?> selected="selected" <?php endif; ?> >16:50</option>
-                                        <option value="17:00" <?php if(old('hour') == '17:00'): ?> selected="selected" <?php endif; ?> >17:00</option>
-                                        <option value="17:10" <?php if(old('hour') == '17:10'): ?> selected="selected" <?php endif; ?> >17:10</option>
-                                        <option value="17:20" <?php if(old('hour') == '17:20'): ?> selected="selected" <?php endif; ?> >17:20</option>
-                                        <option value="17:30" <?php if(old('hour') == '17:30'): ?> selected="selected" <?php endif; ?> >17:30</option>
-                                        <option value="17:40" <?php if(old('hour') == '17:40'): ?> selected="selected" <?php endif; ?> >17:40</option>
-                                        <option value="17:50" <?php if(old('hour') == '17:50'): ?> selected="selected" <?php endif; ?> >17:50</option>
-                                    </select>
-                                    <?php $__errorArgs = ['hour'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                                <!-- <div class="col-4 form-group">
-                                    <select class="custom-select px-4 mb-3  <?php $__errorArgs = ['payment'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" style="height: 50px;" name="payment" required="required">
-                                        <option selected>Pagamento*</option>
-                                        <option value="PAGAMENTO BALC&Atilde;O" <?php if(old('payment') == 'PAGAMENTO BALCÃO'): ?> selected="selected" <?php endif; ?> >PAGAMENTO BALC&Atilde;O</option>
-                                    </select>
-                                    <?php $__errorArgs = ['payment'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                            </div>
-                            <div class="row">
-                                <!-- <div class="col-6 form-group">
-                                    <input type="text" name="name" class="form-control p-4  <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e(old('name')); ?>" placeholder="Nome*">
-                                    <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                                <!-- <div class="col-3 form-group">
-                                    <input type="text" name="cpf" class="form-control mask_cpf p-4 <?php $__errorArgs = ['cpf'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e(old('cpf')); ?>" placeholder="CPF">
-                                    <?php $__errorArgs = ['cpf'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                                <!-- <div class="col-3 form-group">
-                                    <input type="text" name="cnpj" class="form-control mask_cnpj p-4  <?php $__errorArgs = ['cnpj'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e(old('cnpj')); ?>" placeholder="CNPJ">
-                                    <?php $__errorArgs = ['cnpj'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                            </div>
-                            <div class="row">
-                                <!-- <div class="col-3 form-group">
-                                    <input type="text" name="phone" class="form-control mask_phone_with_ddd p-4  <?php $__errorArgs = ['phone'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e(old('phone')); ?>" placeholder="Telefone*" required="required">
-                                    <?php $__errorArgs = ['phone'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                                <!-- <div class="col-9 form-group">
-                                    <input type="email" name="email" class="form-control p-4  <?php $__errorArgs = ['email'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" placeholder="Email*" value="<?php echo e(old('email')); ?>" required="required">
-                                    <?php $__errorArgs = ['email'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong><?php echo e($message); ?></strong>
-                                    </span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                   
-                                </div> -->
-                            </div>
+                            
                             <div>
                                 <button class="btn btn-primary py-3 px-5" type="submit"><?= strtoupper('Agendar');?></button>
                             </div>

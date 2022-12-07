@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\DB;
 use App\Utils\PDF as PDF;
 use Validator;
 use JsValidator;
+use App\Models\Survey;
 
 use Illuminate\Support\Facades\URL;
 
@@ -58,28 +59,43 @@ class FrontController extends ApiBaseController
             $storeRequest = new SurveyStoreRequest();
             $validator = Validator::make(request()->all(), $storeRequest->rules());
 
-            
-
             if($validator->fails()){
                 return back()->withErrors($validator->errors())->withInput();
             }
 
             //dd(request()->all());
-
-            $item = $this->service->create(request()->all());
-
             //dd($item);
 
+            $item = $this->service->create(request()->all());
             session()->flash('message', 'Sua vistoria foi agendada com sucesso!');
+            return redirect()->route('confirmationMsg', ['id' => $item]);
 
-            return redirect()->route('front.index');
 
         } catch (\Exception $e) {
 
-            //return $this->sendError('Server Error.', $e);
+            return $this->sendError('Server Error.', $e);
             //return back()->withErrors($e);
-            session()->flash('error', 'Não foi possivel realizar o agendamento! Confira seus dados e tente novamente');
+            //session()->flash('error', 'Não foi possivel realizar o agendamento! Confira seus dados e tente novamente');
+            //return redirect()->route('front.index');
 
         }
+    }
+
+    public function show() {
+
+    }
+
+    public function confirmation($id) {
+
+        try {
+            $data = Survey::whereId($id)->first();
+
+            //dd($data);
+            return view('public.confirmation', compact("data"));
+        } catch (\Throwable $e) {
+            return $this->sendError('Server Error.', $e);
+        }
+        
+        
     }
 }

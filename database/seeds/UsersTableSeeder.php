@@ -15,13 +15,6 @@ class UsersTableSeeder extends Seeder
     {
         $users = array(
             array(
-                "id" => 1,
-                "is_dev" => true,
-                "name" => "Aglalber",
-                "email" => "aglalber@gmail.com",
-                "email_verified_at" => \Carbon\Carbon::now(),
-            ),
-            array(
                 "id" => 2,
                 "is_dev" => false,
                 "name" => "Piaui",
@@ -31,8 +24,8 @@ class UsersTableSeeder extends Seeder
             array(
                 "id" => 3,
                 "is_dev" => true,
-                "name" => "Marcelo Alves",
-                "email" => "marceloalvessoft@gmail.com",
+                "name" => "Bruno Carvalho",
+                "email" => "brunocarvalho@gmail.com",
                 "email_verified_at" => \Carbon\Carbon::now(),
             ),
             array(
@@ -42,6 +35,14 @@ class UsersTableSeeder extends Seeder
                 "email" => "desenvolvedor@gmail.com",
                 "email_verified_at" => \Carbon\Carbon::now(),
             ),
+            array(
+                "id" => 5,
+                "is_dev" => true,
+                "name" => "Administrador",
+                "email" => "suportetop01@hotmail.com",
+                "email_verified_at" => \Carbon\Carbon::now(),
+            ),
+
         );
 
         $password = Hash::make('12345678');

@@ -21,8 +21,8 @@ Route::post('/resultado', 'Front\FrontController@resultadoStore')->name('front.r
 Route::get('/download', 'Front\FrontController@download')->name('front.download');
 
 
-
 Route::post('/surveyCreate', 'Front\FrontController@store')->name('front.surveyCreate');
+Route::get('/confirmation/{id}', 'Front\FrontController@confirmation')->name('confirmationMsg');
 
 include('marcelo-gerador.php');
 

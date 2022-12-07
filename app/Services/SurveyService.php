@@ -64,7 +64,7 @@ class SurveyService
             $b = $model->fill($data);
 
             //dd($b);
-            #$model->user_creator_id = \Auth::id();
+            //$model->created_at = ;
             #$model->user_updater_id = \Auth::id();
             $a = $model->save();
 
