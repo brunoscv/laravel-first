@@ -35,10 +35,10 @@ class SurveyService
 
         $query->when(request('search'), function ($query, $search) {
 
-            return $query->where('date', 'LIKE', '%' . $search . '%');
+            return $query->where('name', 'LIKE', '%' . $search . '%');
         });
 
-        return $query->orderBy('date', 'DESC');
+        return $query->orderBy('name', 'DESC');
     }
 
     public function all(): Collection

@@ -35,11 +35,8 @@
                                         <!-- <th style="width: 100px; text-align: center">Ações</th> -->
                                         
                                         <th>Nome</th>
-                                        <th>Serviço</th>
-                                        <th>Telefone</th>
-                                        <th>E-mail</th>
-                                        <th>Data</th>
-                                        <th>Hora</th>
+                                        <th>Cidade</th>
+                                        <th>Placa</th>
                                         <th class="hidden-xs hidden-sm" style="width: 150px;">Criado em</th>
                                     </tr>
                                     </thead>
@@ -68,11 +65,8 @@
                                                 </td> -->
                                                 
                                                 <td>{{ $item->name }}</td>
-                                                <td>{{ $item->service }}</td>
-                                                <td>{{ $item->phone }}</td>
-                                                <td>{{ $item->email }}</td>
-                                                <td>{{ date('d/m/Y', strtotime($item->date)) }}</td>
-                                                <td>{{ $item->hour }}</td>
+                                                <td>{{ $item->city }}</td>
+                                                <td>{{ $item->license }}</td>
                                                 <td class="hidden-xs hidden-sm">{{ $item->created_at->format('d/m/Y H:i') }}</td>
 
                                             </tr>
