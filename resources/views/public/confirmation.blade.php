@@ -46,6 +46,7 @@
         </div>
         <div class="container pb-3 pt-3" style="justify-content: center; display: flex;" id="noprint">
             <form>
+                <a class="btn btn-primary" value="Voltar" href="http://dirceuvistorias.com">Voltar</a>
                 <input type="button" class="btn btn-primary" value="Imprimir Comprovante" onClick="window.print()"/>
             </form>
         </div>
