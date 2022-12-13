@@ -37,6 +37,9 @@
                                         <th>Nome</th>
                                         <th>Cidade</th>
                                         <th>Placa</th>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Boleto</th>
                                         <th class="hidden-xs hidden-sm" style="width: 150px;">Criado em</th>
                                     </tr>
                                     </thead>
@@ -67,6 +70,13 @@
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->city }}</td>
                                                 <td>{{ $item->license }}</td>
+                                                <td>{{ $item->date }}</td>
+                                                <td>{{ $item->hour }}</td>
+                                                <td>
+                                                    @if ($item->url_boleto)
+                                                        <a href="{{ $item->url_boleto}}" target="_blank">Link</a>
+                                                    @endif
+                                                </td>
                                                 <td class="hidden-xs hidden-sm">{{ $item->created_at->format('d/m/Y H:i') }}</td>
 
                                             </tr>

@@ -37,9 +37,20 @@ class Survey extends Model
      * @var array
      */
     protected $fillable = [
+        'service',
         'name',
         'city',
         'license',
+        'date',
+        'hour',
+        'payment',
+        'number_boleto',
+        'url_boleto',
+        'img_boleto',
+        'cpf',
+        'cnpj',
+        'phone',
+        'email',
     ];
 
     /**

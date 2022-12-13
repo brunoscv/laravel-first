@@ -111,10 +111,25 @@
                     <div class="contact-form bg-light mb-4" style="padding: 30px;">
                         <form method="POST" action="{{ route('front.surveyCreate') }}" id="frm_save">
                             @csrf
+
                             <div class="row">
-                                
+                                <div class="col-lg-12 col-sm-12 col-xs-12 form-group">
+                                    <label for="service">Serviço</label>
+                                    <select class="custom-select px-4 mb-3  @error('service') is-invalid @enderror" style="height: 50px;" name="service" required="required">
+                                        <option value="VISTORIA VEICULAR - R$ 131,40" @if (old('service') == 'VISTORIA VEICULAR - R$ 131,40') selected="selected" @endif >VISTORIA VEICULAR - R$ 131,40</option>
+                                    </select>
+                                    @error('service')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
+                            </div>
+                            <div class="row"> 
                                 <div class="col-lg-5 col-sm-12 col-xs-12 col-md-5 form-group">
-                                    <input type="text" name="name" class="form-control p-4  @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nome*" required="required">
+                                    <label for="service">Nome(*)</label>
+                                    <input type="text" name="name" class="form-control p-4  @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="" required="required">
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -123,8 +138,18 @@
                                    
                                 </div>
 
-                                <div class="col-lg-4 col-sm-12 col-xs-12 col-md-5 form-group">
-                                    <input type="text" name="city" class="form-control p-4  @error('city') is-invalid @enderror citypicker" value="{{ old('city') }}" placeholder="Cidade*" required="required">
+                                <div class="col-lg-4 col-sm-12 col-xs-12 col-md-4 form-group">
+                                <label for="service">Cidade(*)</label>
+                                    <select class="custom-select px-4 mb-3  @error('city') is-invalid @enderror" style="height: 50px;" name="city" required="required">
+                                        <option value="TERESINA"  @if (old('city') == 'TERESINA') selected="selected" @endif>TERESINA</option>
+                                        <option value="ALTOS"  @if (old('city') == 'ALTOS') selected="selected" @endif>ALTOS</option>
+                                        <option value="AMARANTE"  @if (old('city') == 'AMARANTE') selected="selected" @endif>AMARANTE</option>
+                                        <option value="CAMPO MAIOR"  @if (old('city') == 'CAMPO MAIOR') selected="selected" @endif>CAMPO MAIOR</option>
+                                        <option value="CANTO DO BURITI"  @if (old('city') == 'CANTO DO BURITI') selected="selected" @endif>CANTO DO BURITI</option>\
+                                        <option value="JOSÉ DE FREITAS"  @if (old('city') == 'JOSÉ DE FREITAS') selected="selected" @endif>JOSÉ DE FREITAS</option>
+                                        <option value="PEDRO II"  @if (old('city') == 'PEDRO II') selected="selected" @endif>PEDRO II</option>
+                                        <option value="UNIÃO"  @if (old('city') == 'UNIÃO') selected="selected" @endif>UNIÃO</option>
+                                    </select>
                                     @error('city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -133,14 +158,156 @@
                                 </div>
 
                                 <div class="col-lg-3 col-sm-12 col-xs-12 col-md-5 form-group">
-                                    <input type="text" name="license" class="form-control p-4  @error('license') is-invalid @enderror" value="{{ old('license') }}" placeholder="Placa do Veículo*">
+                                    <label for="service">Placa do Veículo(*)</label>
+                                    <input type="text" name="license" class="form-control p-4  @error('license') is-invalid @enderror" value="{{ old('license') }}" placeholder="" maxlength="10">
                                     @error('license')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </div>
-                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-12 col-xs-12 form-group">
+                                    <label for="service">Data para Vistoria(*)</label>
+                                    <input type="text" name="date" class="form-control p-4  @error('date') is-invalid @enderror datepicker" value="{{ old('date') }}" placeholder="" required="required">
+                                    @error('date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
+                                <div class="col-lg-4  col-sm-12 col-xs-12 form-group">
+                                    <label for="service">Horário para Vistoria(*)</label>
+                                    <select class="custom-select px-4 mb-3 @error('hour') is-invalid @enderror" style="height: 50px;" name="hour" required="required">
+                                        <option value="08:00" @if (old('hour') == '08:00') selected="selected" @endif >08:00</option>
+                                        <option value="08:10" @if (old('hour') == '08:10') selected="selected" @endif >08:10</option>
+                                        <option value="08:20" @if (old('hour') == '08:20') selected="selected" @endif >08:20</option>
+                                        <option value="08:30" @if (old('hour') == '08:30') selected="selected" @endif >08:30</option>
+                                        <option value="08:40" @if (old('hour') == '08:40') selected="selected" @endif >08:40</option>
+                                        <option value="08:50" @if (old('hour') == '08:50') selected="selected" @endif >08:50</option>
+                                        <option value="09:00" @if (old('hour') == '09:00') selected="selected" @endif >09:00</option>
+                                        <option value="09:10" @if (old('hour') == '09:10') selected="selected" @endif >09:10</option>
+                                        <option value="09:20" @if (old('hour') == '09:20') selected="selected" @endif >09:20</option>
+                                        <option value="09:30" @if (old('hour') == '09:30') selected="selected" @endif >09:30</option>
+                                        <option value="09:40" @if (old('hour') == '09:40') selected="selected" @endif >09:40</option>
+                                        <option value="09:50" @if (old('hour') == '09:50') selected="selected" @endif >09:50</option>
+                                        <option value="10:00" @if (old('hour') == '10:00') selected="selected" @endif >10:00</option>
+                                        <option value="10:10" @if (old('hour') == '10:10') selected="selected" @endif >10:10</option>
+                                        <option value="10:20" @if (old('hour') == '10:20') selected="selected" @endif >10:20</option>
+                                        <option value="10:30" @if (old('hour') == '10:30') selected="selected" @endif >10:30</option>
+                                        <option value="10:40" @if (old('hour') == '10:40') selected="selected" @endif >10:40</option>
+                                        <option value="10:50" @if (old('hour') == '10:50') selected="selected" @endif >10:50</option>
+                                        <option value="11:00" @if (old('hour') == '11:00') selected="selected" @endif >11:00</option>
+                                        <option value="11:10" @if (old('hour') == '11:10') selected="selected" @endif >11:10</option>
+                                        <option value="11:20" @if (old('hour') == '11:20') selected="selected" @endif >11:20</option>
+                                        <option value="11:30" @if (old('hour') == '11:30') selected="selected" @endif >11:30</option>
+                                        <option value="11:40" @if (old('hour') == '11:40') selected="selected" @endif >11:40</option>
+                                        <option value="11:50" @if (old('hour') == '11:50') selected="selected" @endif >11:50</option>
+                                        <option value="12:00" @if (old('hour') == '12:00') selected="selected" @endif >12:00</option>
+                                        <option value="12:10" @if (old('hour') == '12:10') selected="selected" @endif >12:10</option>
+                                        <option value="12:20" @if (old('hour') == '12:20') selected="selected" @endif >12:20</option>
+                                        <option value="12:30" @if (old('hour') == '12:30') selected="selected" @endif >12:30</option>
+                                        <option value="12:40" @if (old('hour') == '12:40') selected="selected" @endif >12:40</option>
+                                        <option value="12:50" @if (old('hour') == '12:50') selected="selected" @endif >12:50</option>
+                                        <option value="13:00" @if (old('hour') == '13:00') selected="selected" @endif >13:00</option>
+                                        <option value="13:10" @if (old('hour') == '13:10') selected="selected" @endif >13:10</option>
+                                        <option value="13:20" @if (old('hour') == '13:20') selected="selected" @endif >13:20</option>
+                                        <option value="13:30" @if (old('hour') == '13:30') selected="selected" @endif >13:30</option>
+                                        <option value="13:40" @if (old('hour') == '13:40') selected="selected" @endif >13:40</option>
+                                        <option value="13:50" @if (old('hour') == '13:50') selected="selected" @endif >13:50</option>
+                                        <option value="14:00" @if (old('hour') == '14:00') selected="selected" @endif >14:00</option>
+                                        <option value="14:10" @if (old('hour') == '14:10') selected="selected" @endif >14:10</option>
+                                        <option value="14:20" @if (old('hour') == '14:20') selected="selected" @endif >14:20</option>
+                                        <option value="14:30" @if (old('hour') == '14:30') selected="selected" @endif >14:30</option>
+                                        <option value="14:40" @if (old('hour') == '14:40') selected="selected" @endif >14:40</option>
+                                        <option value="14:50" @if (old('hour') == '14:50') selected="selected" @endif >14:50</option>
+                                        <option value="15:00" @if (old('hour') == '15:00') selected="selected" @endif >15:00</option>
+                                        <option value="15:10" @if (old('hour') == '15:10') selected="selected" @endif >15:10</option>
+                                        <option value="15:20" @if (old('hour') == '15:20') selected="selected" @endif >15:20</option>
+                                        <option value="15:30" @if (old('hour') == '15:30') selected="selected" @endif >15:30</option>
+                                        <option value="15:40" @if (old('hour') == '15:40') selected="selected" @endif >15:40</option>
+                                        <option value="15:50" @if (old('hour') == '15:50') selected="selected" @endif >15:50</option>
+                                        <option value="16:00" @if (old('hour') == '16:00') selected="selected" @endif >16:00</option>
+                                        <option value="16:10" @if (old('hour') == '16:10') selected="selected" @endif >16:10</option>
+                                        <option value="16:20" @if (old('hour') == '16:20') selected="selected" @endif >16:20</option>
+                                        <option value="16:30" @if (old('hour') == '16:30') selected="selected" @endif >16:30</option>
+                                        <option value="16:40" @if (old('hour') == '16:40') selected="selected" @endif >16:40</option>
+                                        <option value="16:50" @if (old('hour') == '16:50') selected="selected" @endif >16:50</option>
+                                        <option value="17:00" @if (old('hour') == '17:00') selected="selected" @endif >17:00</option>
+                                        <option value="17:10" @if (old('hour') == '17:10') selected="selected" @endif >17:10</option>
+                                        <option value="17:20" @if (old('hour') == '17:20') selected="selected" @endif >17:20</option>
+                                        <option value="17:30" @if (old('hour') == '17:30') selected="selected" @endif >17:30</option>
+                                        <option value="17:40" @if (old('hour') == '17:40') selected="selected" @endif >17:40</option>
+                                        <option value="17:50" @if (old('hour') == '17:50') selected="selected" @endif >17:50</option>
+                                    </select>
+                                    @error('hour')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
+                                <div class="col-lg-4 col-sm-12 col-xs-12 form-group">
+                                    <label for="service">Forma de Pagamento(*)</label>
+                                    <select class="custom-select px-4 mb-3  @error('payment') is-invalid @enderror" style="height: 50px;" name="payment" required="required">
+                                        <option value="BOLETO" @if (old('payment') == 'BOLETO') selected="selected" @endif >BOLETO</option>
+                                        <option value="PAGAMENTO BALC&Atilde;O" @if (old('payment') == 'PAGAMENTO BALCÃO') selected="selected" @endif >PAGAMENTO BALC&Atilde;O</option>
+                                    </select>
+                                    @error('payment')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-2 col-sm-12 col-xs-12 form-group">
+                                    <label for="service">CPF(*)</label>
+                                    <input type="text" name="cpf" class="form-control p-4 @error('cpf') is-invalid @enderror" value="{{ old('cpf') }}" placeholder="" maxlength="11">
+                                    <span class="" style="width: 100%; margin-top: .25rem; font-size: 80%; color: #e3342f;" role="alert">
+                                        <strong>**Apenas números**</strong>
+                                    </span>
+                                    @error('cpf')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
+                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
+                                    <label for="service">CNPJ</label>
+                                    <input type="text" name="cnpj" class="form-control mask_cnpj p-4  @error('cnpj') is-invalid @enderror" value="{{ old('cnpj') }}" placeholder="">
+                                    @error('cnpj')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
+                                <div class="col-lg-3 col-sm-12 col-xs-12 form-group">
+                                    <label for="service">Telefone(*)</label>
+                                    <input type="text" name="phone" class="form-control mask_phone_with_ddd p-4  @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="" required="required">
+                                    @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
+                                <div class="col-lg-4 col-sm-12 col-xs-12 form-group">
+                                    <label for="service">Email(*)</label>
+                                    <input type="email" name="email" class="form-control p-4  @error('email') is-invalid @enderror" placeholder="" value="{{ old('email') }}" required="required">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                   
+                                </div>
                             </div>
                             
                             <div>

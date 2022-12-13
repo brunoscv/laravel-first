@@ -61,14 +61,14 @@ class SurveyService
         return DB::transaction(function () use ($data) {
 
             $model = new Survey();
-            $b = $model->fill($data);
+            $model->fill($data);
 
-            //dd($b);
-            //$model->created_at = ;
+            //$model->date = date('Y-m-d H:i:s', strtotime($data['date']));
             #$model->user_updater_id = \Auth::id();
-            $a = $model->save();
 
+            //dd($model);
             
+            $model->save();
 
             return $model;
         });
