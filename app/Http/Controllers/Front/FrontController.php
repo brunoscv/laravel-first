@@ -71,44 +71,28 @@ class FrontController extends ApiBaseController
             if($save['payment'] == "BOLETO" ) {
                 // ENVIANDO CURL PARA GERAR BOLETO PAGSEGURO
                 /* API URL */
-                $url = 'https://sandbox.api.pagseguro.com/charges';
+                $url = 'https://ws.pagseguro.uol.com.br/recurring-payment/boletos?email=suportetop01@hotmail.com&token=' . env('PAGSEGURO_SECRET');
                 /* Init cURL resource */
                 $ch = curl_init($url);
                 /* Array Parameter Data */
                 $data = [
-                    "reference_id" => "ex-00001",
+                    "reference" => "ex-00001",
+                    "firstDueDate" => date('Y-m-d', strtotime("+1 day")),
+                    "numberOfPayments" => "1",
+                    "periodicity" => "monthly",
+                    "amount" => "131.40",
                     "description" => $save['service'],
-                    "amount" => [
-                        "value" => 13140,
-                        "currency" => "BRL"
-                    ],
-                    "payment_method" => [
-                        "type" => "BOLETO",
-                        "boleto" => [
-                            "due_date" => date('Y-m-d', strtotime("+1 day")),
-                            "instruction_lines" => [
-                                "line_1" => "Pagamento processado para DESC Fatura",
-                                "line_2" => "Via PagSeguro"
-                            ],
-                            "holder" => [
-                                "name" => $save['name'],
-                                "tax_id" => $save['cpf'],
-                                "email" => $save['email'],
-                                "address" => [
-                                    "street" => "R. Jacinto Rufino",
-                                    "number" => "2211",
-                                    "locality" => "Teresina",
-                                    "city" => "Piauí",
-                                    "region" => "Dirceu",
-                                    "region_code" => "PI",
-                                    "country" => "Brasil",
-                                    "postal_code" => "64075500"
-                                ]
-                            ]
+                    "customer" => [
+                        "document" => [
+                            "type" => "CPF",
+                            "value" => $save['cpf']
+                        ],
+                        "name" => $save['name'],
+                        "email" => $save['email'],
+                        "phone" => [
+                            "areaCode" => "86",
+                            "number" => "999999999"
                         ]
-                    ],
-                    "notification_urls" => [
-                        "https://dirceuvistorias.com/api/pagamento/notificacao"
                     ]
                 ];
                 /* pass encoded JSON string to the POST fields */
@@ -116,8 +100,7 @@ class FrontController extends ApiBaseController
                 /* set the content type json */
                 $headers = [];
                 $headers[] = 'Content-Type:application/json';
-                $token = "9BBC0CCB276C4C6BB4CCFA79E120C1AA";
-                $headers[] = "Authorization: Bearer ". $token;
+                $headers[] = 'Accept:application/json';
                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
                 /* set return type json */
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -136,12 +119,10 @@ class FrontController extends ApiBaseController
                 //Montando novos elementos do  array de vistorias com informações do boleto caso existam
                 $r = json_decode($result);
                 //dd($r);
-                $save['number_boleto'] = $r->payment_method->boleto->formatted_barcode ? $r->payment_method->boleto->formatted_barcode : '';
-                $save['url_boleto'] = $r->links[0]->href ? $r->links[0]->href : '';
-                $save['img_boleto'] = $r->links[1]->href ? $r->links[1]->href : '';
-
+                $save['number_boleto'] = $r->boletos[0]->barcode ? $r->boletos[0]->barcode : '';
+                $save['url_boleto'] = $r->boletos[0]->paymentLink ? $r->boletos[0]->paymentLink : '';
+                $save['code_boleto'] = $r->boletos[0]->code ? $r->boletos[0]->code : '';
                 //Montando novo array com informações do boleto caso existam
-
             }
 
            

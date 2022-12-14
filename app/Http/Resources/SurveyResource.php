@@ -31,7 +31,7 @@ class SurveyResource extends JsonResource
             'payment' => $this->payment,
             'number_boleto' => $this->number_boleto,
             'url_boleto' => $this->url_boleto,
-            'img_boleto' => $this->img_boleto,
+            'code_boleto' => $this->code_boleto,
             'cpf' => $this->cpf,
             'cnpj' => $this->cnpj,
             'phone' => $this->phone,

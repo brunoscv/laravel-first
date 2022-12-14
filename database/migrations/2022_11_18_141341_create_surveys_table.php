@@ -24,7 +24,7 @@ class CreateSurveysTable extends Migration
             $table->string('payment');
             $table->string('number_boleto')->nullable();
             $table->string('url_boleto')->nullable();
-            $table->string('img_boleto')->nullable();
+            $table->string('code_boleto')->nullable();
             $table->string('cpf');
             $table->string('cnpj')->nullable();
             $table->string('phone')->nullable();

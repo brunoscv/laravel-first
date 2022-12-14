@@ -46,7 +46,7 @@ class Survey extends Model
         'payment',
         'number_boleto',
         'url_boleto',
-        'img_boleto',
+        'code_boleto',
         'cpf',
         'cnpj',
         'phone',
