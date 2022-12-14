@@ -68,7 +68,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2" >
                     <div class="d-flex flex-column justify-content-center px-4">
                         <p class="m-0">Número do Boleto:</p>
-                        <h2 class="text-uppercase text-center">{{$data->number_boleto}}</h2>
+                        <h2 class="text-uppercase text-center" style="word-break: break-word">{{$data->number_boleto}}</h2>
                     </div>
                 </div>
             </div>         

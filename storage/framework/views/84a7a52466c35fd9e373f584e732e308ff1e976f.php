@@ -177,12 +177,44 @@ endif;
 unset($__errorArgs, $__bag); ?>" style="height: 50px;" name="city" required="required">
                                         <option value="TERESINA"  <?php if(old('city') == 'TERESINA'): ?> selected="selected" <?php endif; ?>>TERESINA</option>
                                         <option value="ALTOS"  <?php if(old('city') == 'ALTOS'): ?> selected="selected" <?php endif; ?>>ALTOS</option>
-                                        <option value="AMARANTE"  <?php if(old('city') == 'AMARANTE'): ?> selected="selected" <?php endif; ?>>AMARANTE</option>
                                         <option value="CAMPO MAIOR"  <?php if(old('city') == 'CAMPO MAIOR'): ?> selected="selected" <?php endif; ?>>CAMPO MAIOR</option>
-                                        <option value="CANTO DO BURITI"  <?php if(old('city') == 'CANTO DO BURITI'): ?> selected="selected" <?php endif; ?>>CANTO DO BURITI</option>\
+                                        <option value="UNIÃO"  <?php if(old('city') == 'UNIÃO'): ?> selected="selected" <?php endif; ?>>UNIÃO</option>
+                                        <option value="AMARANTE"  <?php if(old('city') == 'AMARANTE'): ?> selected="selected" <?php endif; ?>>AMARANTE</option>
                                         <option value="JOSÉ DE FREITAS"  <?php if(old('city') == 'JOSÉ DE FREITAS'): ?> selected="selected" <?php endif; ?>>JOSÉ DE FREITAS</option>
                                         <option value="PEDRO II"  <?php if(old('city') == 'PEDRO II'): ?> selected="selected" <?php endif; ?>>PEDRO II</option>
-                                        <option value="UNIÃO"  <?php if(old('city') == 'UNIÃO'): ?> selected="selected" <?php endif; ?>>UNIÃO</option>
+                                        <option value="PARNAIBA"  <?php if(old('city') == 'PARNAIBA'): ?> selected="selected" <?php endif; ?>>PARNAIBA</option>
+                                        <option value="PIRACURUCA"  <?php if(old('city') == 'PIRACURUCA'): ?> selected="selected" <?php endif; ?>>PIRACURUCA</option>
+                                        <option value="COCAL"  <?php if(old('city') == 'COCAL'): ?> selected="selected" <?php endif; ?>>COCAL</option>
+                                        <option value="PIRIPIRI"  <?php if(old('city') == 'PIRIPIRI'): ?> selected="selected" <?php endif; ?>>PIRIPIRI</option>
+                                        <option value="LUZILANDIA"  <?php if(old('city') == 'LUZILANDIA'): ?> selected="selected" <?php endif; ?>>LUZILANDIA</option>
+                                        <option value="BARRAS"  <?php if(old('city') == 'BARRAS'): ?> selected="selected" <?php endif; ?>>BARRAS</option>
+                                        <option value="ESPERANTINA"  <?php if(old('city') == 'ESPERANTINA'): ?> selected="selected" <?php endif; ?>>ESPERANTINA</option>
+                                        <option value="AGUA BRANCA"  <?php if(old('city') == 'AGUA BRANCA'): ?> selected="selected" <?php endif; ?>>AGUA BRANCA</option>
+                                        <option value="CASTELO DO PIAUI"  <?php if(old('city') == 'CASTELO DO PIAUI'): ?> selected="selected" <?php endif; ?>>CASTELO DO PIAUI</option>
+                                        <option value="REGENERAÇÃO"  <?php if(old('city') == 'REGENERAÇÃO'): ?> selected="selected" <?php endif; ?>>REGENERAÇÃO</option>
+                                        <option value="VALENÇA DO PIAUI"  <?php if(old('city') == 'VALENÇA DO PIAUI'): ?> selected="selected" <?php endif; ?>>VALENÇA DO PIAUI</option>
+                                        <option value="INHUMA"  <?php if(old('city') == 'INHUMA'): ?> selected="selected" <?php endif; ?>>INHUMA</option>
+                                        <option value="ELESBAO VELOSO"  <?php if(old('city') == 'ELESBAO VELOSO'): ?> selected="selected" <?php endif; ?>>ELESBAO VELOSO</option>
+                                        <option value="OEIRAS"  <?php if(old('city') == 'OEIRAS'): ?> selected="selected" <?php endif; ?>>OEIRAS</option>
+                                        <option value="PICOS"  <?php if(old('city') == 'PICOS'): ?> selected="selected" <?php endif; ?>>PICOS</option>
+                                        <option value="ITAINÓPOLINS"  <?php if(old('city') == 'ITAINÓPOLINS'): ?> selected="selected" <?php endif; ?>>ITAINÓPOLINS</option>
+                                        <option value="MARCOLANDIA"  <?php if(old('city') == 'MARCOLANDIA'): ?> selected="selected" <?php endif; ?>>MARCOLANDIA</option>
+                                        <option value="JAICÓS"  <?php if(old('city') == 'JAICÓS'): ?> selected="selected" <?php endif; ?>>JAICÓS</option>
+                                        <option value="SIMOES"  <?php if(old('city') == 'SIMOES'): ?> selected="selected" <?php endif; ?>>SIMOES</option>
+                                        <option value="SIMPLICIO MENDES"  <?php if(old('city') == 'SIMPLICIO MENDES'): ?> selected="selected" <?php endif; ?>>SIMPLICIO MENDES</option>
+                                        <option value="PADRE MARCOS"  <?php if(old('city') == 'PADRE MARCOS'): ?> selected="selected" <?php endif; ?>>PADRE MARCOS</option>
+                                        <option value="FRONTEIRAS"  <?php if(old('city') == 'FRONTEIRAS'): ?> selected="selected" <?php endif; ?>>FRONTEIRAS</option>
+                                        <option value="PAULISTANA"  <?php if(old('city') == 'PAULISTANA'): ?> selected="selected" <?php endif; ?>>PAULISTANA</option>
+                                        <option value="BOM JESUS"  <?php if(old('city') == 'BOM JESUS'): ?> selected="selected" <?php endif; ?>>BOM JESUS</option>
+                                        <option value="CANTO DO BURITI"  <?php if(old('city') == 'CANTO DO BURITI'): ?> selected="selected" <?php endif; ?>>CANTO DO BURITI</option>\
+                                        <option value="CURIMATAR"  <?php if(old('city') == 'CURIMATAR'): ?> selected="selected" <?php endif; ?>>CURIMATAR</option>
+                                        <option value="CORRENTE"  <?php if(old('city') == 'CORRENTE'): ?> selected="selected" <?php endif; ?>>CORRENTE</option>
+                                        <option value="ITAUEIRA"  <?php if(old('city') == 'ITAUEIRA'): ?> selected="selected" <?php endif; ?>>ITAUEIRA</option>
+                                        <option value="URUCUÍ"  <?php if(old('city') == 'URUCUÍ'): ?> selected="selected" <?php endif; ?>>URUCUÍ</option>
+                                        <option value="SÃO JOÃO DO PIAUÍ"  <?php if(old('city') == 'SÃO JOÃO DO PIAUÍ'): ?> selected="selected" <?php endif; ?>>SÃO JOÃO DO PIAUÍ</option>
+                                        <option value="GUADALUPE"  <?php if(old('city') == 'GUADALUPE'): ?> selected="selected" <?php endif; ?>>GUADALUPE</option>
+                                        <option value="S R NONATO"  <?php if(old('city') == 'S R NONATO'): ?> selected="selected" <?php endif; ?>>S R NONATO</option>
+                                        <option value="FLORIANO"  <?php if(old('city') == 'FLORIANO'): ?> selected="selected" <?php endif; ?>>FLORIANO</option>
                                     </select>
                                     <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
