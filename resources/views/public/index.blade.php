@@ -143,12 +143,44 @@
                                     <select class="custom-select px-4 mb-3  @error('city') is-invalid @enderror" style="height: 50px;" name="city" required="required">
                                         <option value="TERESINA"  @if (old('city') == 'TERESINA') selected="selected" @endif>TERESINA</option>
                                         <option value="ALTOS"  @if (old('city') == 'ALTOS') selected="selected" @endif>ALTOS</option>
-                                        <option value="AMARANTE"  @if (old('city') == 'AMARANTE') selected="selected" @endif>AMARANTE</option>
                                         <option value="CAMPO MAIOR"  @if (old('city') == 'CAMPO MAIOR') selected="selected" @endif>CAMPO MAIOR</option>
-                                        <option value="CANTO DO BURITI"  @if (old('city') == 'CANTO DO BURITI') selected="selected" @endif>CANTO DO BURITI</option>\
+                                        <option value="UNIÃO"  @if (old('city') == 'UNIÃO') selected="selected" @endif>UNIÃO</option>
+                                        <option value="AMARANTE"  @if (old('city') == 'AMARANTE') selected="selected" @endif>AMARANTE</option>
                                         <option value="JOSÉ DE FREITAS"  @if (old('city') == 'JOSÉ DE FREITAS') selected="selected" @endif>JOSÉ DE FREITAS</option>
                                         <option value="PEDRO II"  @if (old('city') == 'PEDRO II') selected="selected" @endif>PEDRO II</option>
-                                        <option value="UNIÃO"  @if (old('city') == 'UNIÃO') selected="selected" @endif>UNIÃO</option>
+                                        <option value="PARNAIBA"  @if (old('city') == 'PARNAIBA') selected="selected" @endif>PARNAIBA</option>
+                                        <option value="PIRACURUCA"  @if (old('city') == 'PIRACURUCA') selected="selected" @endif>PIRACURUCA</option>
+                                        <option value="COCAL"  @if (old('city') == 'COCAL') selected="selected" @endif>COCAL</option>
+                                        <option value="PIRIPIRI"  @if (old('city') == 'PIRIPIRI') selected="selected" @endif>PIRIPIRI</option>
+                                        <option value="LUZILANDIA"  @if (old('city') == 'LUZILANDIA') selected="selected" @endif>LUZILANDIA</option>
+                                        <option value="BARRAS"  @if (old('city') == 'BARRAS') selected="selected" @endif>BARRAS</option>
+                                        <option value="ESPERANTINA"  @if (old('city') == 'ESPERANTINA') selected="selected" @endif>ESPERANTINA</option>
+                                        <option value="AGUA BRANCA"  @if (old('city') == 'AGUA BRANCA') selected="selected" @endif>AGUA BRANCA</option>
+                                        <option value="CASTELO DO PIAUI"  @if (old('city') == 'CASTELO DO PIAUI') selected="selected" @endif>CASTELO DO PIAUI</option>
+                                        <option value="REGENERAÇÃO"  @if (old('city') == 'REGENERAÇÃO') selected="selected" @endif>REGENERAÇÃO</option>
+                                        <option value="VALENÇA DO PIAUI"  @if (old('city') == 'VALENÇA DO PIAUI') selected="selected" @endif>VALENÇA DO PIAUI</option>
+                                        <option value="INHUMA"  @if (old('city') == 'INHUMA') selected="selected" @endif>INHUMA</option>
+                                        <option value="ELESBAO VELOSO"  @if (old('city') == 'ELESBAO VELOSO') selected="selected" @endif>ELESBAO VELOSO</option>
+                                        <option value="OEIRAS"  @if (old('city') == 'OEIRAS') selected="selected" @endif>OEIRAS</option>
+                                        <option value="PICOS"  @if (old('city') == 'PICOS') selected="selected" @endif>PICOS</option>
+                                        <option value="ITAINÓPOLINS"  @if (old('city') == 'ITAINÓPOLINS') selected="selected" @endif>ITAINÓPOLINS</option>
+                                        <option value="MARCOLANDIA"  @if (old('city') == 'MARCOLANDIA') selected="selected" @endif>MARCOLANDIA</option>
+                                        <option value="JAICÓS"  @if (old('city') == 'JAICÓS') selected="selected" @endif>JAICÓS</option>
+                                        <option value="SIMOES"  @if (old('city') == 'SIMOES') selected="selected" @endif>SIMOES</option>
+                                        <option value="SIMPLICIO MENDES"  @if (old('city') == 'SIMPLICIO MENDES') selected="selected" @endif>SIMPLICIO MENDES</option>
+                                        <option value="PADRE MARCOS"  @if (old('city') == 'PADRE MARCOS') selected="selected" @endif>PADRE MARCOS</option>
+                                        <option value="FRONTEIRAS"  @if (old('city') == 'FRONTEIRAS') selected="selected" @endif>FRONTEIRAS</option>
+                                        <option value="PAULISTANA"  @if (old('city') == 'PAULISTANA') selected="selected" @endif>PAULISTANA</option>
+                                        <option value="BOM JESUS"  @if (old('city') == 'BOM JESUS') selected="selected" @endif>BOM JESUS</option>
+                                        <option value="CANTO DO BURITI"  @if (old('city') == 'CANTO DO BURITI') selected="selected" @endif>CANTO DO BURITI</option>\
+                                        <option value="CURIMATAR"  @if (old('city') == 'CURIMATAR') selected="selected" @endif>CURIMATAR</option>
+                                        <option value="CORRENTE"  @if (old('city') == 'CORRENTE') selected="selected" @endif>CORRENTE</option>
+                                        <option value="ITAUEIRA"  @if (old('city') == 'ITAUEIRA') selected="selected" @endif>ITAUEIRA</option>
+                                        <option value="URUCUÍ"  @if (old('city') == 'URUCUÍ') selected="selected" @endif>URUCUÍ</option>
+                                        <option value="SÃO JOÃO DO PIAUÍ"  @if (old('city') == 'SÃO JOÃO DO PIAUÍ') selected="selected" @endif>SÃO JOÃO DO PIAUÍ</option>
+                                        <option value="GUADALUPE"  @if (old('city') == 'GUADALUPE') selected="selected" @endif>GUADALUPE</option>
+                                        <option value="S R NONATO"  @if (old('city') == 'S R NONATO') selected="selected" @endif>S R NONATO</option>
+                                        <option value="FLORIANO"  @if (old('city') == 'FLORIANO') selected="selected" @endif>FLORIANO</option>
                                     </select>
                                     @error('city')
                                     <span class="invalid-feedback" role="alert">
