@@ -118,7 +118,7 @@ class FrontController extends ApiBaseController
                 
                 //Montando novos elementos do  array de vistorias com informações do boleto caso existam
                 $r = json_decode($result);
-                //dd($r);
+                dd($r);
                 $save['number_boleto'] = $r->boletos[0]->barcode ? $r->boletos[0]->barcode : '';
                 $save['url_boleto'] = $r->boletos[0]->paymentLink ? $r->boletos[0]->paymentLink : '';
                 $save['code_boleto'] = $r->boletos[0]->code ? $r->boletos[0]->code : '';
