@@ -80,7 +80,7 @@ class FrontController extends ApiBaseController
                     "firstDueDate" => date('Y-m-d', strtotime("+1 day")),
                     "numberOfPayments" => "1",
                     "periodicity" => "monthly",
-                    "amount" => "131.40",
+                    "amount" => "130.40",
                     "description" => $save['service'],
                     "customer" => [
                         "document" => [
