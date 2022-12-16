@@ -154,6 +154,7 @@
                                         <option value="PIRIPIRI"  @if (old('city') == 'PIRIPIRI') selected="selected" @endif>PIRIPIRI</option>
                                         <option value="LUZILANDIA"  @if (old('city') == 'LUZILANDIA') selected="selected" @endif>LUZILANDIA</option>
                                         <option value="BARRAS"  @if (old('city') == 'BARRAS') selected="selected" @endif>BARRAS</option>
+                                        <option value="BARRO DURO"  @if (old('city') == 'BARRO DURO') selected="selected" @endif>BARRO DURO</option>
                                         <option value="ESPERANTINA"  @if (old('city') == 'ESPERANTINA') selected="selected" @endif>ESPERANTINA</option>
                                         <option value="AGUA BRANCA"  @if (old('city') == 'AGUA BRANCA') selected="selected" @endif>AGUA BRANCA</option>
                                         <option value="CASTELO DO PIAUI"  @if (old('city') == 'CASTELO DO PIAUI') selected="selected" @endif>CASTELO DO PIAUI</option>
