@@ -110,6 +110,8 @@ class FrontController extends ApiBaseController
                 /* close cURL resource */
                 curl_close($ch);
 
+                dd($result);
+
                 if ($err) {
                     //echo "cURL Error #:" . $err;
                     return $this->sendError('Server Error.', $err);

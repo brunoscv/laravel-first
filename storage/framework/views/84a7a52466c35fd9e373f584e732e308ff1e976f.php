@@ -188,6 +188,7 @@ unset($__errorArgs, $__bag); ?>" style="height: 50px;" name="city" required="req
                                         <option value="PIRIPIRI"  <?php if(old('city') == 'PIRIPIRI'): ?> selected="selected" <?php endif; ?>>PIRIPIRI</option>
                                         <option value="LUZILANDIA"  <?php if(old('city') == 'LUZILANDIA'): ?> selected="selected" <?php endif; ?>>LUZILANDIA</option>
                                         <option value="BARRAS"  <?php if(old('city') == 'BARRAS'): ?> selected="selected" <?php endif; ?>>BARRAS</option>
+                                        <option value="BARRO DURO"  <?php if(old('city') == 'BARRO DURO'): ?> selected="selected" <?php endif; ?>>BARRO DURO</option>
                                         <option value="ESPERANTINA"  <?php if(old('city') == 'ESPERANTINA'): ?> selected="selected" <?php endif; ?>>ESPERANTINA</option>
                                         <option value="AGUA BRANCA"  <?php if(old('city') == 'AGUA BRANCA'): ?> selected="selected" <?php endif; ?>>AGUA BRANCA</option>
                                         <option value="CASTELO DO PIAUI"  <?php if(old('city') == 'CASTELO DO PIAUI'): ?> selected="selected" <?php endif; ?>>CASTELO DO PIAUI</option>
