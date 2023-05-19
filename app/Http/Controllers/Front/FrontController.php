@@ -76,6 +76,7 @@ class FrontController extends ApiBaseController
                 // ENVIANDO CURL PARA GERAR BOLETO PAGSEGURO
                 /* API URL */
                 $url = 'https://api.pagseguro.com/orders';
+                //$url = 'https://sandbox.api.pagseguro.com/orders';
                 /* Init cURL resource */
                 $ch = curl_init($url);
                 /* Array Parameter Data */
@@ -135,6 +136,7 @@ class FrontController extends ApiBaseController
                         )
                     ]      
                 ];
+
                 /* pass encoded JSON string to the POST fields */
                 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
                 /* set the content type json */
@@ -142,29 +144,30 @@ class FrontController extends ApiBaseController
                 $headers[] = 'Content-Type:application/json';
                 $headers[] = 'Accept:application/json';
                 $headers[] = "Authorization: Bearer " . env('PAGSEGURO_SECRET');
+                //$headers[] = "Authorization: Bearer " . env('PAGSEGURO_SANDBOX_SECRET');
                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
                 /* set return type json */
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, dirname(__FILE__) . '/cacert.pem');
                 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, dirname(__FILE__) . '/cacert.pem');
                 //curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
+
               
                 /* execute request */
                 $result = curl_exec($ch);
                 $err = curl_error($ch);
                 /* close cURL resource */
                 curl_close($ch);
-                
+
                 if ($err) {
                     //echo "cURL Error #:" . $err;
                     return $this->sendError('Server Error.', $err);
                 }
-                // ENVIANDO CURL PARA GERAR BOLETO PAGSEGURO 
+                // ENVIANDO CURL PARA GERAR BOLETO PAGSEGURO
+                
                 
                 //Montando novos elementos do  array de vistorias com informações do boleto caso existam
                 $r = json_decode($result);
-                dd($r);
-                //dd($r->charges[0]->payment_method->boleto->barcode);
                 $save['number_boleto'] = $r->charges[0]->payment_method->boleto->barcode ? $r->charges[0]->payment_method->boleto->barcode : '';
                 $save['url_boleto'] = $r->charges[0]->links[0]->href ? $r->charges[0]->links[0]->href : '';
                 $save['code_boleto'] = $r->charges[0]->payment_method->boleto->id ? $r->charges[0]->payment_method->boleto->id : '';
@@ -173,8 +176,6 @@ class FrontController extends ApiBaseController
 
            
             $save['date'] = (Carbon::createFromFormat('d/m/Y', $save['date'])->format('Y-m-d'));
-
-           //dd($save);
             $item = $this->service->create($save);
                 
             session()->flash('message', 'Sua vistoria foi agendada com sucesso!');
