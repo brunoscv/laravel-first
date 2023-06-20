@@ -101,42 +101,45 @@ class FrontController extends ApiBaseController
                         "quantity" => 1,
                         "unit_amount" => 13140),
                     ],
+                    "notification_urls" => [
+                        "https://dirceuvistorias.com"
+                    ],
                     "charges" => [
                         array(
-                        "reference_id" =>  "ex-10001",
-                        "description" =>  $save['service'],
-                        "amount" => array("value" => 13140, "currency" => "BRL"),
-                        "payment_method" => [
-                            "type" =>  "BOLETO",
-                            "boleto" =>  array(
-                                "due_date" =>  date('Y-m-d', strtotime("+1 day")),
-                                "instruction_lines" =>  array(
-                                    "line_1" =>  "Pagamento processado para DESC Fatura",
-                                    "line_2" =>  "Via PagSeguro"
-                                ),
-                                "holder" =>  array (
-                                    "name" =>  "Jose da Silva",
-                                    "tax_id" =>  "22222222222",
-                                    "email" =>  "jose@email.com",
-                                    "address" =>  array (
-                                        "country" =>  "Brasil",
-                                        "region" =>  "São Paulo",
-                                        "region_code" => "SP",
-                                        "city" =>  "Sao Paulo",
-                                        "postal_code" =>  "01452002",
-                                        "street" =>  "Avenida Brigadeiro Faria Lima",
-                                        "number" =>  "1384",
-                                        "locality" =>  "Pinheiros"
+                            "reference_id" =>  "ex-10001",
+                            "description" =>  $save['service'],
+                            "notification_urls" => [
+                                "https://dirceuvistorias.com"
+                            ],
+                            "amount" => array("value" => 13140, "currency" => "BRL"),
+                            "payment_method" => [
+                                "type" =>  "BOLETO",
+                                "boleto" =>  array(
+                                    "due_date" =>  date('Y-m-d', strtotime("+1 day")),
+                                    "instruction_lines" =>  array(
+                                        "line_1" =>  "Pagamento processado para DESC Fatura",
+                                        "line_2" =>  "Via PagSeguro"
+                                    ),
+                                    "holder" =>  array (
+                                        "name" =>  $save['name'],
+                                        "tax_id" =>  $save['cpf'],
+                                        "email" =>  $save['email'],
+                                        "address" =>  array (
+                                            "country" =>  "Brasil",
+                                            "region" =>  "Sao Paulo",
+                                            "region_code" => "SP",
+                                            "city" =>  "Sao Paulo",
+                                            "postal_code" =>  "01452002",
+                                            "street" =>  "Avenida Brigadeiro Faria Lima",
+                                            "number" =>  "1384",
+                                            "locality" =>  "Pinheiros"
+                                        )
                                     )
                                 )
-                            )
-
-                           
-                        ]
+                            ]
                         )
                     ]      
                 ];
-
                 /* pass encoded JSON string to the POST fields */
                 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
                 /* set the content type json */
@@ -152,19 +155,20 @@ class FrontController extends ApiBaseController
                 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, dirname(__FILE__) . '/cacert.pem');
                 //curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
 
-              
                 /* execute request */
                 $result = curl_exec($ch);
                 $err = curl_error($ch);
                 /* close cURL resource */
                 curl_close($ch);
 
+                //dd(json_encode($data));
                 if ($err) {
                     //echo "cURL Error #:" . $err;
                     return $this->sendError('Server Error.', $err);
                 }
                 // ENVIANDO CURL PARA GERAR BOLETO PAGSEGURO
                 
+                //dd($result);
                 
                 //Montando novos elementos do  array de vistorias com informações do boleto caso existam
                 $r = json_decode($result);
