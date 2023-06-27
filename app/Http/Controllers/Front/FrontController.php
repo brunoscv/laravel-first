@@ -80,7 +80,7 @@ class FrontController extends ApiBaseController
                 /* Init cURL resource */
                 $ch = curl_init($url);
                 /* Array Parameter Data */
-                $data = [
+                /**$data = [
                     "reference_id" => "ex-00001",
                     "customer" => array(
                         "name" => $save['name'],
@@ -139,7 +139,9 @@ class FrontController extends ApiBaseController
                             ]
                         )
                     ]      
-                ];
+                ]; */
+
+                $data = [];
                 /* pass encoded JSON string to the POST fields */
                 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
                 /* set the content type json */
@@ -164,9 +166,16 @@ class FrontController extends ApiBaseController
                 //dd(json_encode($data));
                 if ($err) {
                     //echo "cURL Error #:" . $err;
-                    return $this->sendError('Server Error.', $err);
+                    //return $this->sendError('Server Error.', $err);
+
+                    session()->flash('error', 'Serviço de geração de boletos está indisponível no momento. Tente novamente mais tarde.');
+                    return redirect()->route('front.index');
+
                 }
                 // ENVIANDO CURL PARA GERAR BOLETO PAGSEGURO
+                
+                session()->flash('error', 'Serviço de geração de boletos está indisponível no momento. Tente novamente mais tarde.');
+                return redirect()->route('front.index');
                 
                 //dd($result);
                 

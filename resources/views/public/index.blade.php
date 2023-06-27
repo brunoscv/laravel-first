@@ -103,6 +103,13 @@
                             {{ session('message') }}
                         </div>
                     @endif
+
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
                 </div>
                 <div class="col-lg-12 mb-2">
                 <p style="color:red !important"> O documento que será apresentado para a vistoria não precisa ser necessariamente o documento vigente do proprietário do veículo.</p>
